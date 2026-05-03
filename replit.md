@@ -1,52 +1,52 @@
 # Backstory — Next.js Website
 
 ## Overview
-A Next.js TypeScript website for **Backstory**, a storytelling workshop service based in Hong Kong. Built from Figma designs with two pages: a landing (Workshops) page and a Showcase projects page.
+Static marketing website for **Backstory**, a storytelling workshops company. Two pages: a landing/workshops page and a showcase/projects page. Faithful to Figma designs.
 
-## Architecture
+## Stack
 - **Framework**: Next.js 14 (App Router), TypeScript
-- **Styling**: Tailwind CSS v3, Google Fonts (Playfair Display + DM Sans via `next/font`)
-- **No backend**: Static content only — no API routes, no database, no state management
-- **Assets**: Figma-exported images/icons in `public/` directory
+- **Styling**: Tailwind CSS v3 + PostCSS (CommonJS configs)
+- **Fonts**: Playfair Display (headings) + DM Sans (body) via `next/font/google`
+- **No backend, no database, no state management** — purely static
 
-## Key Directories
-- `app/` — Next.js App Router pages
-  - `app/layout.tsx` — Root layout with font setup and metadata
-  - `app/globals.css` — Global Tailwind base styles
-  - `app/page.tsx` — Landing/Workshops page
-  - `app/showcase/page.tsx` — Showcase projects page
-- `components/` — Shared React components
-  - `components/Navbar.tsx` — Sticky navigation with active link state
-  - `components/Footer.tsx` — Footer with links and copyright
-- `public/` — Static assets (Figma SVG icons and PNG images)
+## Running the App
+The workflow runs a **production build** then serves it:
+```
+npx next build && npx next start -p 5000
+```
+This is intentional — production mode eliminates CSS injection issues and WebSocket HMR problems that occur in Replit's proxied dev environment.
 
-## Pages
-1. **`/`** — Landing page: Hero, What We Do, Workshop Formats, CTA, Footer
-2. **`/showcase`** — Showcase: Intro, Project Cards (3), Featured Project (Indiahikes detail), CTA, Footer
+> **After any code change**, restart the "Start application" workflow to rebuild and serve the updated site.
+
+## Project Structure
+```
+app/
+  layout.tsx        — Root layout (fonts, metadata, Navbar + Footer)
+  globals.css       — Tailwind directives + global CSS variables
+  page.tsx          — Landing / Workshops page
+  showcase/
+    page.tsx        — Showcase / Projects page
+components/
+  Navbar.tsx        — Sticky nav with active-link detection
+  Footer.tsx        — Site footer
+public/             — Static assets (images from Figma)
+Dockerfile          — Multi-stage Alpine build for deployment
+.github/workflows/  — CI/CD (lint, build, Docker, Vercel deploy)
+postcss.config.cjs  — PostCSS config (CommonJS — required for Next.js)
+tailwind.config.cjs — Tailwind config (CommonJS)
+next.config.mjs     — Next.js config
+```
 
 ## Design Tokens
-- Background: `#f7f3ee` (warm off-white), `#f0ebe3` (slightly darker cream)
-- Dark brand: `#2d2418` (dark brown)
-- Accent: `#b5471b` (terracotta)
-- Fonts: `font-playfair` (headings), `font-dm` (body)
+| Token    | Value     | Usage                    |
+|----------|-----------|--------------------------|
+| bg       | `#f7f3ee` | Page background          |
+| dark     | `#2d2418` | Headings, logo           |
+| accent   | `#b5471b` | Labels, borders, arrows  |
+| cream    | `#f0ebe3` | Section backgrounds      |
+| muted    | `#6b5f52` | Body text                |
 
-## Scripts
-- `npx next dev -p 5000` — Development server (used by Replit workflow)
-- `npm run build` — Production build
-- `npm run start` — Production server on port 5000
-- `npm run lint` — ESLint check
-
-## Config Files
-- `next.config.mjs` — Next.js config with `output: "standalone"` for Docker
-- `tailwind.config.cjs` — Tailwind config (CommonJS, required by Tailwind's jiti loader)
-- `tsconfig.json` — TypeScript config for Next.js App Router
-
-## Deployment
-- **Docker**: `Dockerfile` uses multi-stage build (deps → builder → runner). Produces a minimal Alpine image.
-- **Vercel**: Ready to deploy. Add `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` secrets to GitHub.
-- **GitHub Actions**: `.github/workflows/ci.yml` runs lint + build on every push, builds Docker image on main, and deploys to Vercel on main.
-
-## Notes
-- `tailwind.config.cjs` must stay as CommonJS — Tailwind's `jiti` loader doesn't support top-level await
-- Old Express/Vite files (`server/`, `client/`, `shared/`) are preserved but unused
-- Workflow command: `npx next dev -p 5000` (port 5000 required by Replit)
+## Key Notes
+- `postcss.config.cjs` **must** be `.cjs` (CommonJS) — using `.js` in a `"type":"module"` project silently breaks PostCSS in Next.js
+- `tailwind.config.cjs` has no plugins to keep loading reliable
+- `output: standalone` was removed from `next.config.mjs` since it conflicts with `next start`; Dockerfile uses `next build` then `node .next/standalone/server.js`
