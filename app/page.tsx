@@ -104,12 +104,10 @@ export default function HomePage() {
               Storytelling Workshops
             </p>
             <h1 className="mt-4 font-playfair text-[48px] font-semibold leading-[1.15] tracking-tight text-[#2d2418] max-w-[480px] md:text-[56px]">
-              Storytelling workshops for organisations
+              Your team has stories worth sharing
             </h1>
             <p className="mt-6 max-w-[520px] font-dm text-[17px] font-normal leading-[30px] text-[#2d2418] opacity-70">
-              Backstory uses personal stories from real life experiences - not
-              presentation technique or data - to build deep and genuine
-              connections within teams.
+              Build meaningful connections by finding, shaping, and sharing stories hidden in life experiences. 
             </p>
             <p className="mt-4 font-dm text-[17px] font-medium leading-[30px] text-[#b5471b] italic">
               Your team has stories worth sharing.
