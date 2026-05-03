@@ -1269,37 +1269,18 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-@keyframes enter {
-
-  from {
-    opacity: var(--tw-enter-opacity, 1);
-    transform: translate3d(var(--tw-enter-translate-x, 0), var(--tw-enter-translate-y, 0), 0) scale3d(var(--tw-enter-scale, 1), var(--tw-enter-scale, 1), var(--tw-enter-scale, 1)) rotate(var(--tw-enter-rotate, 0));
-  }
-}
-@keyframes exit {
-
-  to {
-    opacity: var(--tw-exit-opacity, 1);
-    transform: translate3d(var(--tw-exit-translate-x, 0), var(--tw-exit-translate-y, 0), 0) scale3d(var(--tw-exit-scale, 1), var(--tw-exit-scale, 1), var(--tw-exit-scale, 1)) rotate(var(--tw-exit-rotate, 0));
-  }
-}
-
 .hover\:opacity-100:hover {
   opacity: 1;
 }
-
 .hover\:opacity-80:hover {
   opacity: 0.8;
 }
-
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
-
 .focus\:opacity-100:focus {
   opacity: 1;
 }
-
 @media not all and (min-width: 768px) {
 
   .max-md\:text-\[26px\] {
@@ -1310,7 +1291,6 @@ video {
     line-height: 38px;
   }
 }
-
 @media not all and (min-width: 640px) {
 
   .max-sm\:text-\[32px\] {
@@ -1329,7 +1309,6 @@ video {
     line-height: 44px;
   }
 }
-
 @media (min-width: 640px) {
 
   .sm\:flex-row {
@@ -1362,7 +1341,6 @@ video {
     text-align: right;
   }
 }
-
 @media (min-width: 768px) {
 
   .md\:block {
@@ -1413,7 +1391,6 @@ video {
     font-size: 64px;
   }
 }
-
 @media (min-width: 1280px) {
 
   .xl\:grid-cols-3 {
