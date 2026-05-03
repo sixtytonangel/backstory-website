@@ -1,4 +1,4 @@
-// File: /home/runner/workspace/app/showcase/page.tsx
+// File: /vercel/share/v0-project/app/showcase/page.tsx
 import * as entry from '../../../../app/showcase/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
