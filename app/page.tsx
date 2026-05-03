@@ -22,12 +22,12 @@ const outcomes = [
     number: "04",
     title: "More authentic communication",
     description:
-      "Internally and externally — stories land in a way data rarely does.",
+      "Internally and externally - stories land in a way data rarely does.",
   },
 ];
 
 const workshopFormats = [
-  { title: "60 – 90 min", subtitle: "Focused session", description: "Fits inside a team meeting or event slot." },
+  { title: "60 - 90 min", subtitle: "Focused session", description: "Fits inside a team meeting or event slot." },
   { title: "Half or full day", subtitle: "Deep dive", description: "Ideal for retreats, offsites, and intensive programmes." },
   { title: "Online or offline", subtitle: "Your space", description: "On campus, off campus, or fully remote." },
 ];
@@ -54,7 +54,7 @@ const processSteps = [
   {
     number: "03",
     title: "Host the workshop",
-    description: "A carefully customised session — online or in-person.",
+    description: "A carefully customised session - online or in-person.",
   },
   {
     number: "04",
@@ -68,13 +68,13 @@ const contextCategories = [
     number: "01",
     title: "Onboarding",
     tags: ["New joiners", "Graduate programmes", "Manager induction"],
-    description: "Help people find their footing — and each other — from the very first week.",
+    description: "Help people find their footing - and each other - from the very first week.",
   },
   {
     number: "02",
     title: "Collaborating",
     tags: ["Project kickoffs", "Team mergers", "Cross-divisional events", "Corporate offsites", "Network gatherings"],
-    description: "Build trust between people who need to work together — quickly and genuinely.",
+    description: "Build trust between people who need to work together - quickly and genuinely.",
   },
   {
     number: "03",
@@ -107,8 +107,8 @@ export default function HomePage() {
               Storytelling workshops for organisations
             </h1>
             <p className="mt-6 max-w-[520px] font-dm text-[17px] font-normal leading-[30px] text-[#2d2418] opacity-70">
-              Backstory uses personal stories from real life experiences — not
-              presentation technique or data — to build deep and genuine
+              Backstory uses personal stories from real life experiences - not
+              presentation technique or data - to build deep and genuine
               connections within teams.
             </p>
             <p className="mt-4 font-dm text-[17px] font-medium leading-[30px] text-[#b5471b] italic">
@@ -325,20 +325,20 @@ export default function HomePage() {
               </div>
               <div className="mt-6 flex flex-col gap-4">
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
-                  I&apos;m Niharika — a facilitator, storyteller, and the person
+                  I&apos;m Niharika - a facilitator, storyteller, and the person
                   behind Backstory. I co-run Hong Kong Stories, and have spent 7
                   years performing and facilitating personal storytelling in live
                   settings.
                 </p>
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   Before this, I spent 10 years in professional roles at Goldman
-                  Sachs and Airdev — so I understand the pressures and
+                  Sachs and Airdev - so I understand the pressures and
                   communication challenges that teams in organisations actually
                   face.
                 </p>
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   I started Backstory in 2024 to apply storytelling to business
-                  contexts — focusing on life-experience stories as a tool for
+                  contexts - focusing on life-experience stories as a tool for
                   genuine connection. I work with teams globally.
                 </p>
                 <p className="mt-2 font-dm text-[15px] font-medium leading-[26px] text-[#b5471b] italic">
@@ -363,7 +363,7 @@ export default function HomePage() {
               Where it works
             </h2>
             <p className="max-w-[480px] font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-70">
-              Wherever authentic connection leads to better outcomes — which is
+              Wherever authentic connection leads to better outcomes - which is
               to say, in almost every team context.
             </p>
           </div>
@@ -450,7 +450,7 @@ export default function HomePage() {
             </div>
           </div>
           <p className="mt-8 text-center font-dm text-[13px] font-normal leading-[20px] text-[#2d2418] opacity-50">
-            Testimonial placeholders — content to be added
+            Testimonial placeholders - content to be added
           </p>
         </div>
       </section>
@@ -490,12 +490,12 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-6 text-center font-dm text-[13px] font-normal leading-[20px] text-[#2d2418] opacity-50">
-            Photo placeholders — workshop images to be added
+            Photo placeholders - workshop images to be added
           </p>
         </div>
       </section>
 
-      {/* CTA — Get Started */}
+      {/* CTA - Get Started */}
       <section
         id="contact"
         className="relative w-full bg-[#2d2418] px-6 py-24"
@@ -509,7 +509,7 @@ export default function HomePage() {
           </h2>
           <p className="mt-4 max-w-[520px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
             The best first step is a short conversation. Tell me what you&apos;re
-            working towards — I&apos;ll suggest what might work.
+            working towards - I&apos;ll suggest what might work.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a

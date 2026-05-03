@@ -19,15 +19,15 @@ const workshopCards: {
     title: "Indiahikes",
     subtitle: "India's leading trekking organisation",
     description:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' — for trek leaders who carry that message every day.",
+      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
   },
   {
     key: "mixedbag",
     title: "The MixedBag Company",
     subtitle:
-      "Event management company — facilitating a flagship employee event for a top-tier corporate client",
+      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
     description:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully — not just network.",
+      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
   },
   {
     key: "vatavriksha",
@@ -61,10 +61,10 @@ const projectData: Record<
     title: "Indiahikes",
     meta: ["Online", "90 min", "12 participants"],
     intro:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' — for trek leaders who carry that message every day.",
+      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
     contextImage: "/imagewithfallback.png",
     workshopImage: "/imagewithfallback-1.png",
-    goal: "Find and shape stories that illustrate Indiahikes' core motto 'Trekking Transforms Life'. Trek leaders are the faces of this mission — the workshop helped them find and tell personal stories that make that idea real for the trekkers they lead.",
+    goal: "Find and shape stories that illustrate Indiahikes' core motto 'Trekking Transforms Life'. Trek leaders are the faces of this mission - the workshop helped them find and tell personal stories that make that idea real for the trekkers they lead.",
     format:
       "A 90-minute online 'Listening for Stories' workshop for 12 selected trek leaders. Delivered virtually with small group exercises, reflective prompts, and guided story-sharing.",
     approach: [
@@ -78,17 +78,17 @@ const projectData: Record<
       "A story prompt from the session was turned into an Instagram post that generated many meaningful responses",
     ],
     quote:
-      "The session opened up something we didn't know we were missing. Our leaders came out with stories they were genuinely proud to share — and it showed on the next trek.",
+      "The session opened up something we didn't know we were missing. Our leaders came out with stories they were genuinely proud to share - and it showed on the next trek.",
     quoteName: "Rajan",
     quoteRole: "Experience Leader, Indiahikes",
   },
   mixedbag: {
     tagline:
-      "Event management company — facilitating a flagship employee event for a top-tier corporate client",
+      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
     title: "The MixedBag Company",
     meta: ["In-person", "60 min", "~100 participants"],
     intro:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully — not just network.",
+      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
     contextImage: "/mixedbag-context.jpg",
     workshopImage: "/mixedbag-workshop.jpg",
     goal: "Design an engaging group activity for roughly 100 employees across levels and divisions, helping them connect in a meaningful way during an annual flagship event.",
@@ -105,7 +105,7 @@ const projectData: Record<
       "The activity became a highlight of the event according to attendee feedback",
     ],
     quote:
-      "Participants were still talking about it afterwards. It managed to be both fun and genuinely connecting — which is rare at large corporate events.",
+      "Participants were still talking about it afterwards. It managed to be both fun and genuinely connecting - which is rare at large corporate events.",
     quoteName: "Tanvi Tilve",
     quoteRole: "Founder, The MixedBag Company",
   },
@@ -117,11 +117,11 @@ const projectData: Record<
       "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
     contextImage: "/vatavriksha-context.jpg",
     workshopImage: "/vatavriksha-workshop.jpg",
-    goal: "Help wellness practitioners gather meaningfully at a new studio launch — building genuine relationships with each other and with the space they would be working from.",
+    goal: "Help wellness practitioners gather meaningfully at a new studio launch - building genuine relationships with each other and with the space they would be working from.",
     format:
       "A 90-minute combined workshop drawing from 'Networking with Stories' and 'Advocating with Stories' formats, designed specifically for a small group of practitioners.",
     approach: [
-      "Centred the session on 'story tributes' — stories about people who have shaped each participant's wellbeing journey",
+      "Centred the session on 'story tributes' - stories about people who have shaped each participant's wellbeing journey",
       "Used personal narrative to bridge practitioners across disciplines (yoga, therapy, nutrition, etc.)",
       "Designed prompts that made advocacy feel authentic rather than performative",
     ],
@@ -131,7 +131,7 @@ const projectData: Record<
       "A WhatsApp group formed after the session and became an active ongoing community space",
     ],
     quote:
-      "It felt like magic — people who had just met were sharing things that felt real and true. The connections that formed that evening have continued to grow.",
+      "It felt like magic - people who had just met were sharing things that felt real and true. The connections that formed that evening have continued to grow.",
     quoteName: "Shilpa Padmanabhan",
     quoteRole: "Founder, Vatavriksha",
   },
@@ -187,7 +187,7 @@ export default function ShowcasePage() {
             Showcase
           </h1>
           <p className="mt-5 max-w-[604px] font-dm text-base font-normal leading-[28.8px] text-[#2d2418] opacity-70">
-            Each project below is a customised storytelling workshop — shaped
+            Each project below is a customised storytelling workshop - shaped
             around a specific team, a specific goal, and a specific moment. No
             two are the same.
           </p>
@@ -277,6 +277,7 @@ export default function ShowcasePage() {
         ref={featuredRef}
         id="featured-project"
         className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6 scroll-mt-20"
+      >
         <div className="mx-auto flex w-full max-w-[953px] flex-col">
           <header className="mb-6 flex flex-col gap-3">
             <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
@@ -424,7 +425,7 @@ export default function ShowcasePage() {
         </div>
       </section>
 
-      {/* CTA — dark */}
+      {/* CTA - dark */}
       <section className="relative w-full bg-[#2d2418] px-6 py-24">
         <div className="mx-auto flex w-full max-w-[953px] flex-col items-center text-center">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#f7f3ee8c] uppercase">
