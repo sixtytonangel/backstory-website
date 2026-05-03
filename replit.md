@@ -1,32 +1,52 @@
-# Backstory — Replit Project
+# Backstory — Next.js Website
 
 ## Overview
-A landing page for **Backstory**, a storytelling workshop service. Built as a full-stack TypeScript app with a React frontend and Express backend.
+A Next.js TypeScript website for **Backstory**, a storytelling workshop service based in Hong Kong. Built from Figma designs with two pages: a landing (Workshops) page and a Showcase projects page.
 
 ## Architecture
-- **Frontend**: React 18 + Vite, Tailwind CSS v3, Framer Motion, Radix UI / Shadcn components, Wouter routing, TanStack Query
-- **Backend**: Express 5, Drizzle ORM, PostgreSQL (`pg`), Passport.js (scaffolded, not actively used)
-- **Shared**: Drizzle schema + Zod validation in `shared/schema.ts`
-- **Styling**: Tailwind CSS v3 config lives in `tailwind.config.cjs` (CommonJS, required by Tailwind's jiti loader)
+- **Framework**: Next.js 14 (App Router), TypeScript
+- **Styling**: Tailwind CSS v3, Google Fonts (Playfair Display + DM Sans via `next/font`)
+- **No backend**: Static content only — no API routes, no database, no state management
+- **Assets**: Figma-exported images/icons in `public/` directory
 
 ## Key Directories
-- `client/src/pages/` — Main page (`BackstoryCopy.tsx`) and 404
-- `client/src/pages/sections/` — Modular landing page sections (Nav, Showcase, Workshop Cards, Featured Project, Testimonial, CTA)
-- `client/src/components/ui/` — Shadcn UI component library
-- `server/` — Express server, routes (placeholder), storage interface
-- `shared/` — Database schema shared between client and server
-- `client/public/figmaAssets/` — Design assets imported from Figma
+- `app/` — Next.js App Router pages
+  - `app/layout.tsx` — Root layout with font setup and metadata
+  - `app/globals.css` — Global Tailwind base styles
+  - `app/page.tsx` — Landing/Workshops page
+  - `app/showcase/page.tsx` — Showcase projects page
+- `components/` — Shared React components
+  - `components/Navbar.tsx` — Sticky navigation with active link state
+  - `components/Footer.tsx` — Footer with links and copyright
+- `public/` — Static assets (Figma SVG icons and PNG images)
+
+## Pages
+1. **`/`** — Landing page: Hero, What We Do, Workshop Formats, CTA, Footer
+2. **`/showcase`** — Showcase: Intro, Project Cards (3), Featured Project (Indiahikes detail), CTA, Footer
+
+## Design Tokens
+- Background: `#f7f3ee` (warm off-white), `#f0ebe3` (slightly darker cream)
+- Dark brand: `#2d2418` (dark brown)
+- Accent: `#b5471b` (terracotta)
+- Fonts: `font-playfair` (headings), `font-dm` (body)
 
 ## Scripts
-- `npm run dev` — Start development server on port 5000
-- `npm run build` — Build for production (`dist/`)
-- `npm run start` — Run production build
-- `npm run db:push` — Push Drizzle schema to PostgreSQL
+- `npx next dev -p 5000` — Development server (used by Replit workflow)
+- `npm run build` — Production build
+- `npm run start` — Production server on port 5000
+- `npm run lint` — ESLint check
 
-## Database
-PostgreSQL via Replit's built-in database. Schema defined with Drizzle ORM in `shared/schema.ts`. Run `npm run db:push` after schema changes.
+## Config Files
+- `next.config.mjs` — Next.js config with `output: "standalone"` for Docker
+- `tailwind.config.cjs` — Tailwind config (CommonJS, required by Tailwind's jiti loader)
+- `tsconfig.json` — TypeScript config for Next.js App Router
+
+## Deployment
+- **Docker**: `Dockerfile` uses multi-stage build (deps → builder → runner). Produces a minimal Alpine image.
+- **Vercel**: Ready to deploy. Add `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID` secrets to GitHub.
+- **GitHub Actions**: `.github/workflows/ci.yml` runs lint + build on every push, builds Docker image on main, and deploys to Vercel on main.
 
 ## Notes
-- Tailwind config must stay as `tailwind.config.cjs` (CommonJS) because Tailwind's `jiti` loader doesn't support top-level `await` / ESM imports in config files
-- No active auth flow despite Passport.js being installed — auth routes are not yet registered
-- No external third-party API integrations
+- `tailwind.config.cjs` must stay as CommonJS — Tailwind's `jiti` loader doesn't support top-level await
+- Old Express/Vite files (`server/`, `client/`, `shared/`) are preserved but unused
+- Workflow command: `npx next dev -p 5000` (port 5000 required by Replit)
