@@ -74,7 +74,9 @@ export default function Navbar() {
             })}
             <li>
               <a
-                href="/#contact"
+                href="https://calendly.com/aggarwal-niharikaa/story-workshop-consultation"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex h-auto items-center rounded-sm bg-[#2d2418] px-5 py-[7px] font-dm text-[14.4px] font-medium leading-[21.6px] text-[#f7f3ee] transition-opacity hover:opacity-90"
               >
                 Book a call
@@ -86,7 +88,9 @@ export default function Navbar() {
         {/* Mobile menu */}
         <div className="flex items-center gap-4 md:hidden">
           <a
-            href="/#contact"
+            href="https://calendly.com/aggarwal-niharikaa/story-workshop-consultation"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-auto items-center rounded-sm bg-[#2d2418] px-4 py-[6px] font-dm text-[13px] font-medium leading-[20px] text-[#f7f3ee]"
           >
             Book a call

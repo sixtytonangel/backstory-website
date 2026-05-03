@@ -429,18 +429,19 @@ export default function ShowcasePage() {
       <section className="relative w-full bg-[#2d2418] px-6 py-24">
         <div className="mx-auto flex w-full max-w-[953px] flex-col items-center text-center">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#f7f3ee8c] uppercase">
-            Your team
+            Get Started
           </p>
           <h2 className="mt-3 font-playfair text-[40.6px] font-semibold leading-[61px] text-[#f7f3ee] max-sm:text-[32px] max-sm:leading-[44px]">
-            Imagine this for your team
+            Let&apos;s plan workshops for your team
           </h2>
-          <p className="mt-4 max-w-[483px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
-            Every workshop is built around your specific context. Let&apos;s
-            talk about what that could look like for your organisation.
+          <p className="mt-4 max-w-[520px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
+            The best first step is a short conversation. Tell me what your team needs - I&apos;ll suggest what might work.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:hello@backstory.hk"
+              href="https://calendly.com/aggarwal-niharikaa/story-workshop-consultation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center rounded-sm bg-[#b5471b] px-8 py-[13px] font-dm text-[15.5px] font-medium leading-[23.3px] text-[#f7f3ee] transition-opacity hover:opacity-90"
             >
               Book a call
