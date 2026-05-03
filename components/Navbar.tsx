@@ -13,11 +13,38 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
 
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If clicking Workshops while on landing page, scroll to top
+    if (href === "/" && pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    
+    // If clicking a hash link while on landing page, smooth scroll
+    if (href.startsWith("/#") && pathname === "/") {
+      e.preventDefault();
+      const targetId = href.replace("/#", "");
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#2d24181a] bg-[#f7f3ee]">
       <div className="flex min-h-[70px] w-full items-center justify-between gap-6 px-6 py-4">
         <Link
           href="/"
+          onClick={handleLogoClick}
           className="font-playfair text-[21.6px] font-semibold leading-[32.4px] tracking-[-0.22px] text-[#2d2418]"
         >
           Backstory
@@ -35,6 +62,7 @@ export default function Navbar() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
+                    onClick={(e) => handleNavClick(e, item.href)}
                     className={`font-dm text-[15.2px] leading-[22.8px] text-[#2d2418] transition-opacity hover:opacity-100 focus:opacity-100 ${
                       isActive ? "opacity-100 font-medium" : "opacity-70 font-normal"
                     }`}
