@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -139,6 +140,37 @@ const projectData: Record<
 export default function ShowcasePage() {
   const [activeProject, setActiveProject] = useState<ProjectKey>("indiahikes");
   const project = projectData[activeProject];
+  const router = useRouter();
+  const featuredRef = useRef<HTMLElement>(null);
+
+  // Handle hash on mount and hash changes
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace("#", "") as ProjectKey;
+      if (hash && projectData[hash]) {
+        setActiveProject(hash);
+        // Small delay to ensure state is updated before scrolling
+        setTimeout(() => {
+          featuredRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    };
+
+    // Check hash on mount
+    handleHash();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  const handleProjectClick = (key: ProjectKey) => {
+    setActiveProject(key);
+    router.push(`/showcase#${key}`, { scroll: false });
+    setTimeout(() => {
+      featuredRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
 
   return (
     <main className="w-full">
@@ -180,7 +212,7 @@ export default function ShowcasePage() {
               return (
                 <button
                   key={card.key}
-                  onClick={() => setActiveProject(card.key)}
+                  onClick={() => handleProjectClick(card.key)}
                   className={`flex flex-col rounded-sm border text-left transition-all ${
                     isActive
                       ? "bg-[#ede8e0] border-[#b5471b]"
@@ -241,7 +273,10 @@ export default function ShowcasePage() {
       </section>
 
       {/* Featured Project */}
-      <section className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6">
+      <section 
+        ref={featuredRef}
+        id="featured-project"
+        className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6 scroll-mt-20"
         <div className="mx-auto flex w-full max-w-[953px] flex-col">
           <header className="mb-6 flex flex-col gap-3">
             <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
