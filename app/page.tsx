@@ -146,17 +146,15 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          {/* Hero image */}
+          {/* Hero image - using img tag to prevent Next.js optimization artifacts */}
           <div className="mt-12 flex-shrink-0 md:mt-0">
             <div className="relative overflow-hidden rounded-lg">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/cards-hero.jpg"
                 alt="Workshop activity - Pick a card that describes you best"
-                width={380}
-                height={380}
                 className="h-[300px] w-[300px] object-cover md:h-[380px] md:w-[380px]"
-                priority
-                quality={95}
+                style={{ imageRendering: "auto" }}
               />
             </div>
           </div>
