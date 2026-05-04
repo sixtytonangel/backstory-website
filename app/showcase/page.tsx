@@ -62,8 +62,8 @@ const projectData: Record<
     meta: ["Online", "90 min", "12 participants"],
     intro:
       "Find stories that illustrate Indiahikes' motto — Trekking Transforms Life.",
-    contextImage: "/imagewithfallback.png",
-    workshopImage: "/imagewithfallback-1.png",
+    contextImage: "/Indiahikes-Showcase-1.png",
+    workshopImage: "/Indiahikes-Showcase-2.png",
     approach: [
       "Integrating stories in personal introductions before the trek.",
       "Introducing techniques to bring out stories in conversations during the trek.",
