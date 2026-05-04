@@ -3,32 +3,9 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const outcomes = [
-  {
-    number: "01",
-    title: "New people settle in",
-    description: "They develop a sense of community sooner when they exchange stories, not just information",
-  },
-  {
-    number: "02",
-    title: "Teams work better together",
-    description: "Knowing each other's stories helps towards understanding each other's perspectives",
-  },
-  {
-    number: "03",
-    title: "Managers channel their empathy",
-    description: "Building skills to listen for stories and finding common language through stories",
-  },
-  {
-    number: "04",
-    title: "Communication becomes richer",
-    description: "A true and relevant personal story builds interest in conversations",
-  },
-];
-
 const workshopFormats = [
   { title: "60 - 90 min", subtitle: "Focused session", description: "Fits inside a team meeting or event slot." },
-  { title: "6 - 60 ppl", subtitle: "Hands on", description: "Adapted as per your team size" },
+  { title: "6 - 60 people", subtitle: "Hands on", description: "Adapted as per your team size." },
   { title: "Online or offline", subtitle: "Your space", description: "On campus, off campus, or fully remote." },
 ];
 
@@ -44,7 +21,7 @@ const processSteps = [
   {
     number: "01",
     title: "Start a conversation",
-    description: "An open call to understand your team's context, goals, and timing.",
+    description: "An open call to understand your team's context and goals.",
   },
   {
     number: "02",
@@ -54,12 +31,12 @@ const processSteps = [
   {
     number: "03",
     title: "Host the workshop",
-    description: "A carefully customised session - online or in-person.",
+    description: "A reasearched and customised session to align with your needs.",
   },
   {
     number: "04",
     title: "Follow-up support",
-    description: "Resources and support to carry the practice forward",
+    description: "Resources and support to carry the practice forward.",
   },
 ];
 
@@ -67,26 +44,26 @@ const contextCategories = [
   {
     number: "01",
     title: "Onboarding",
-    tags: ["Graduate Programs", "New Teams", "Mergers & acquisitions"],
-    description: "Help people find their footing - and each other - from the very first week.",
+    tags: ["Graduate Programs", "New Teams", "Mergers & Acquisitions"],
+    description: "Help people build their community from the very first week.",
   },
   {
     number: "02",
     title: "Collaborating",
     tags: ["Project kickoffs", "Retrospectives", "Innovation sprints"],
-    description: "Build trust between people who need to work together - quickly and genuinely.",
+    description: "Understand each other's perspectives and build trust.",
   },
   {
     number: "03",
     title: "Leading",
     tags: ["Manager orientations", "Mentorship programs", "Strategy offsites"],
-    description: "Give people in leadership roles a more human way to connect, guide, and persuade.",
+    description: "Listen for stories and find common language to guide and align.",
   },
 ];
 
 const niharikaTags = [
   "7 yrs facilitation",
-  "7 yrs storytelling performance",
+  "7 yrs live performance",
   "Goldman Sachs · Airdev",
   "Based in Hong Kong",
 ];
@@ -97,21 +74,21 @@ const testimonials = [
     name: "Ramon Rajan",
     role: "Team Lead, Indiahikes",
     logo: "/images/logo-indiahikes.jpeg",
-    website: "https://indiahikes.com/",
+    href: "/showcase#indiahikes",
   },
   {
     quote: "What made the experience special was her ability to create a safe, engaging space where participants could exchange stories with ease and authenticity. Her facilitation was thoughtful and inclusive, making storytelling feel natural rather than performative.",
     name: "Tanvi Tilve",
     role: "Founder, The MixedBag Company",
     logo: "/images/logo-mixedbag.avif",
-    website: "https://www.themixedbagcompany.com/",
+    href: "/showcase#mixedbag",
   },
   {
     quote: "We knew the workshop was a success when we had to ask people to leave as it was time to shut the studio... the ice had truly broken... The otherwise shy-to-open-up people had big smiles on their faces.",
     name: "Shilpa Padmanabhan",
     role: "Founder, Vatavriksha",
     logo: "/images/logo-vatavriksha.jpg",
-    website: "https://www.instagram.com/vatavriksha_the_synergy_studio/",
+    href: "/showcase#vatavriksha",
   },
 ];
 
@@ -119,7 +96,7 @@ const workshopMoments = [
   { src: "/images/workshop-feast-story-swap.jpg", alt: "FEAST Workshop Story Swap" },
   { src: "/images/workshop-feast-korea.jpg", alt: "FEAST Korea wrap up" },
   { src: "/images/workshop-pune-banter.jpg", alt: "Pune workshops banter" },
-  { src: "/images/cards-hero.jpg", alt: "Workshop cards activity" },
+  { src: "/images/workshop-udaipur.jpeg", alt: "Udaipur Tales storytelling workshop" },
 ];
 
 export default function HomePage() {
@@ -131,17 +108,17 @@ export default function HomePage() {
       <section className="w-full bg-[#f7f3ee] px-6 pb-24 pt-20 md:pt-28">
         <div className="mx-auto flex w-full max-w-[953px] flex-col md:flex-row md:items-center md:justify-between md:gap-12">
           <div className="flex-1">
-            <p className="font-dm text-xs font-medium leading-[26px] tracking-[1.44px] text-[#b5471b] uppercase">
+            <p className="font-dm text-s font-medium leading-[26px] tracking-[1.44px] text-[#b5471b] uppercase">
               Storytelling Workshops
             </p>
             <h1 className="mt-4 font-playfair text-[48px] font-semibold leading-[1.15] tracking-tight text-[#2d2418] max-w-[480px] md:text-[56px]">
               You have stories worth sharing
             </h1>
             <p className="mt-6 max-w-[520px] font-dm text-[17px] font-normal leading-[30px] text-[#2d2418] opacity-70">
-              Find stories hidden in life experiences to build deep and genuine connections. 
+              Find stories hidden in life experiences to build deep and genuine connections.
             </p>
             <p className="mt-4 font-dm text-[17px] font-medium leading-[30px] text-[#b5471b] italic">
-              Not data stories. Not speech outlines. Just real anecdotes. 
+              Not speech outlines. Not data stories. Just real anecdotes.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
@@ -171,26 +148,31 @@ export default function HomePage() {
           </div>
           {/* Hero image */}
           <div className="mt-12 flex-shrink-0 md:mt-0">
-            <div className="relative h-[300px] w-[300px] overflow-hidden rounded-lg md:h-[380px] md:w-[380px]">
+            <div className="relative overflow-hidden rounded-lg">
               <Image
                 src="/images/cards-hero.jpg"
                 alt="Workshop activity - Pick a card that describes you best"
-                fill
-                className="object-cover"
+                width={380}
+                height={380}
+                className="h-[300px] w-[300px] object-cover md:h-[380px] md:w-[380px]"
                 priority
+                quality={95}
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Context - Where it works (moved up) */}
+      {/* Context - Value / Why it works */}
       <section className="w-full border-t border-[#2d241814] bg-[#f0ebe3] px-6 py-20">
         <div className="mx-auto w-full max-w-[953px]">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
-            Where it works
+            Value
           </p>
           <div className="mt-3 h-0.5 w-10 bg-[#b5471b]" />
+          <h2 className="mt-6 font-playfair text-[38px] font-semibold leading-[1.2] text-[#2d2418] md:text-[44px]">
+            Why it works
+          </h2>
 
           <div className="mt-12 flex flex-col divide-y divide-[#2d241820]">
             {contextCategories.map((category) => (
@@ -218,35 +200,6 @@ export default function HomePage() {
                     {category.description}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Outcomes - Why it works */}
-      <section className="w-full border-t border-[#2d241814] bg-[#2d2418] px-6 py-20">
-        <div className="mx-auto w-full max-w-[953px]">
-          <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
-            Outcomes
-          </p>
-          <div className="mt-3 h-0.5 w-10 bg-[#b5471b]" />
-          <h2 className="mt-6 font-playfair text-[38px] font-semibold leading-[1.2] text-[#f7f3ee] md:text-[44px]">
-            Why it works
-          </h2>
-
-          <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2">
-            {outcomes.map((item) => (
-              <div key={item.number} className="flex flex-col gap-3">
-                <span className="font-dm text-[12px] font-medium tracking-[1.44px] text-[#b5471b]">
-                  {item.number}
-                </span>
-                <h3 className="font-playfair text-[22px] font-semibold leading-[32px] text-[#f7f3ee]">
-                  {item.title}
-                </h3>
-                <p className="font-dm text-[14.5px] font-normal leading-[25px] text-[#f7f3ee] opacity-60">
-                  {item.description}
-                </p>
               </div>
             ))}
           </div>
@@ -352,17 +305,17 @@ export default function HomePage() {
           </p>
           <div className="mt-3 h-0.5 w-10 bg-[#b5471b]" />
 
-          <div className="mt-10 flex flex-col gap-10 md:flex-row md:gap-16">
+          <div className="mt-10 flex flex-col gap-10 md:flex-row md:items-center md:gap-16">
             {/* Photo */}
-            <div className="flex-shrink-0">
-              <div className="relative h-[280px] w-[220px] overflow-hidden rounded-sm">
-                <Image
-                  src="/images/niharika-profile.jpg"
-                  alt="Niharika - Facilitator and Storyteller"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="flex-shrink-0 self-center md:self-center">
+              <Image
+                src="/images/niharika-profile.jpg"
+                alt="Niharika - Facilitator and Storyteller"
+                width={220}
+                height={280}
+                className="h-[280px] w-[220px] rounded-sm object-cover"
+                quality={90}
+              />
             </div>
 
             {/* Bio content */}
@@ -383,7 +336,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-col gap-4">
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   I&apos;m Niharika - a facilitator, storyteller, and the person
-                  behind Backstory. I have spent 7 years performing and facilitating personal stories on stage as well as in workshops. I co-run Hong Kong Stories, a non-profit organisation to help Honger Kongers tell thierr stories. 
+                  behind Backstory. I have spent 7 years performing and facilitating personal stories on stage as well as in workshops. I co-run Hong Kong Stories, a non-profit organisation to help Hong Kongers tell their stories.
                 </p>
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   Before this, I spent 10 years in professional roles at Goldman
@@ -412,16 +365,14 @@ export default function HomePage() {
           </p>
           <div className="mt-3 h-0.5 w-10 bg-[#b5471b]" />
           <h2 className="mt-6 font-playfair text-[38px] font-semibold leading-[1.2] text-[#2d2418] md:text-[44px]">
-            What participants say
+            What clients say
           </h2>
 
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             {testimonials.map((testimonial) => (
-              <a
+              <Link
                 key={testimonial.name}
-                href={testimonial.website}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={testimonial.href}
                 className="group flex flex-col rounded-sm border border-[#2d241820] bg-[#f0ebe3] p-6 transition-all hover:border-[#b5471b40] hover:shadow-sm"
               >
                 <div className="relative h-12 w-12 overflow-hidden rounded-full">
@@ -443,7 +394,7 @@ export default function HomePage() {
                     {testimonial.role}
                   </p>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
