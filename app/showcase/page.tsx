@@ -187,9 +187,7 @@ export default function ShowcasePage() {
             Showcase
           </h1>
           <p className="mt-5 max-w-[604px] font-dm text-base font-normal leading-[28.8px] text-[#2d2418] opacity-70">
-            Each project below is a customised storytelling workshop - shaped
-            around a specific team, a specific goal, and a specific moment. No
-            two are the same.
+            Each workshop featured below was designed around the organisation's goal and the participant's contexts.
           </p>
         </div>
       </section>
