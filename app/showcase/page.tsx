@@ -87,8 +87,8 @@ const projectData: Record<
     meta: ["In-person", "60 min", "~60 participants"],
     intro:
       "Enable cross-divisional employees to mingle meaningfully at a team building cook-off.",
-    contextImage: "images/Mixedbag-showcase-1.png",
-    workshopImage: "images/Mixedbag-showcase-2.png",
+    contextImage: "/images/Mixedbag-showcase-1.png",
+    workshopImage: "/images/Mixedbag-showcase-2.png",
     approach: [
       "Niharika shared an entertaining story about her lunch box.",
       "Invited others to share stories through food related prompts in line with the event theme.",
@@ -111,8 +111,8 @@ const projectData: Record<
     meta: ["In-person", "90 min", "10 participants"],
     intro:
       "Introduce the space to wellness practitioners in the city and build a community.",
-    contextImage: "images/Vatavriksha-Showcase-1.png",
-    workshopImage: "images/Vatavriksha-Showcase-2.png",
+    contextImage: "/images/Vatavriksha-Showcase-1.png",
+    workshopImage: "/images/Vatavriksha-Showcase-2.png",
     approach: [
       "Group exercises to identify people who are part of their support network.",
       "Writing exercises to bring to life a key moment of finding support.",
