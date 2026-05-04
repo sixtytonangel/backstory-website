@@ -33,13 +33,22 @@ args = "Start application"
 name = "Start application"
 author = "agent"
 
-[workflows.workflow.metadata]
-outputType = "webview"
-
 [[workflows.workflow.tasks]]
 task = "shell.exec"
 args = "npx next build && npx next start -p 5000"
 waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow]]
+name = "Run"
+mode = "sequential"
+author = 58578790
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run build && npm start"
 
 [agent]
 stack = "FULLSTACK_JS"

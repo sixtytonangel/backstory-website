@@ -1,85 +1,171 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata: Metadata = {
-  title: "Showcase — Backstory",
-  description:
-    "Each project is a customised storytelling workshop — shaped around a specific team, a specific goal, and a specific moment. No two are the same.",
+type ProjectKey = "indiahikes" | "mixedbag" | "vatavriksha";
+
+const workshopCards: {
+  key: ProjectKey;
+  title: string;
+  subtitle: string;
+  description: string;
+}[] = [
+    {
+      key: "indiahikes",
+      title: "Indiahikes",
+      subtitle: "India's leading trekking organisation",
+      description:
+        "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
+    },
+    {
+      key: "mixedbag",
+      title: "The MixedBag Company",
+      subtitle:
+        "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+      description:
+        "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
+    },
+    {
+      key: "vatavriksha",
+      title: "Vatavriksha",
+      subtitle: "A new wellness studio",
+      description:
+        "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
+    },
+  ];
+
+const projectData: Record<
+  ProjectKey,
+  {
+    tagline: string;
+    title: string;
+    website: string;
+    meta: string[];
+    intro: string;
+    contextImage: string;
+    workshopImage: string;
+    approach: string[];
+    outcomes: string[];
+    quote: string;
+    quoteName: string;
+    quoteRole: string;
+  }
+> = {
+  indiahikes: {
+    tagline: "India's leading trekking organisation",
+    title: "Indiahikes",
+    website: "https://indiahikes.com",
+    meta: ["Online", "90 min", "12 participants"],
+    intro:
+      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
+    contextImage: "/imagewithfallback.png",
+    workshopImage: "/imagewithfallback-1.png",
+    approach: [
+      "Mapped touchpoints across the trek journey to identify where stories matter most",
+      "Selected high-impact techniques and exercises aligned to those key moments",
+      "Prompted leaders to surface stories from their own trekking experiences, not just scripted narratives",
+    ],
+    outcomes: [
+      "Trek leaders crafted personal stories to use in their introductions with trekkers",
+      "Each leader left with a bank of story prompts for richer conversations on the trail",
+      "A story prompt from the session was turned into an Instagram post that generated many meaningful responses",
+    ],
+    quote:
+      "The session opened up something we didn't know we were missing. Our leaders came out with stories they were genuinely proud to share - and it showed on the next trek.",
+    quoteName: "Rajan",
+    quoteRole: "Experience Leader, Indiahikes",
+  },
+  mixedbag: {
+    tagline:
+      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+    title: "The MixedBag Company",
+    website: "https://www.themixedbagcompany.com",
+    meta: ["In-person", "60 min", "~100 participants"],
+    intro:
+      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
+    contextImage: "/mixedbag-context.jpg",
+    workshopImage: "/mixedbag-workshop.jpg",
+    approach: [
+      "Built story prompts around food memories and cultural identity to fit the event theme",
+      "Structured the session so quieter participants were equally included from the start",
+      "Used pair and small-group swaps to lower the stakes and invite genuine sharing",
+    ],
+
+    outcomes: [
+      "Nearly everyone shared stories, including participants who started out hesitant",
+      "Conversations continued well after the session ended, with many people staying back to talk",
+      "The activity became a highlight of the event according to attendee feedback",
+    ],
+    quote:
+      "Participants were still talking about it afterwards. It managed to be both fun and genuinely connecting - which is rare at large corporate events.",
+    quoteName: "Tanvi Tilve",
+    quoteRole: "Founder, The MixedBag Company",
+  },
+  vatavriksha: {
+    tagline: "A new wellness studio",
+    title: "Vatavriksha",
+    website: "https://vatavriksha.com",
+    meta: ["In-person", "90 min", "10 participants"],
+    intro:
+      "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
+    contextImage: "/vatavriksha-context.jpg",
+    workshopImage: "/vatavriksha-workshop.jpg",
+    approach: [
+      "Centred the session on 'story tributes' - stories about people who have shaped each participant's wellbeing journey",
+      "Used personal narrative to bridge practitioners across disciplines (yoga, therapy, nutrition, etc.)",
+      "Designed prompts that made advocacy feel authentic rather than performative",
+    ],
+    outcomes: [
+      "Each participant left with a story they went on to share with a loved one that same evening",
+      "Participants exchanged contacts and immediately began exploring collaboration ideas",
+      "A WhatsApp group formed after the session and became an active ongoing community space",
+    ],
+    quote:
+      "It felt like magic - people who had just met were sharing things that felt real and true. The connections that formed that evening have continued to grow.",
+    quoteName: "Shilpa Padmanabhan",
+    quoteRole: "Founder, Vatavriksha",
+  },
 };
 
-const workshopCards = [
-  {
-    title: "Indiahikes",
-    subtitle: "India's leading trekking organisation",
-    description:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' — for trek leaders who carry that message every day.",
-    highlighted: true,
-    hasBadge: true,
-    cardBg: "bg-[#ede8e0]",
-    cardBorder: "border-[#b5471b]",
-    subtitleColor: "text-[#b5471b]",
-    ctaColor: "text-[#b5471b]",
-    href: "#indiahikes",
-  },
-  {
-    title: "The MixedBag Company",
-    subtitle:
-      "Event management company — facilitating a flagship employee event for a top-tier corporate client",
-    description:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully — not just network.",
-    highlighted: false,
-    hasBadge: false,
-    cardBg: "bg-[#f0ebe3]",
-    cardBorder: "border-[#2d24181a]",
-    subtitleColor: "text-[#b5471b]",
-    ctaColor: "text-[#2d2418] opacity-50",
-    href: "#mixedbag",
-  },
-  {
-    title: "Vatavriksha",
-    subtitle: "A new wellness studio",
-    description:
-      "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
-    highlighted: false,
-    hasBadge: false,
-    cardBg: "bg-[#f0ebe3]",
-    cardBorder: "border-[#2d24181a]",
-    subtitleColor: "text-[#b5471b]",
-    ctaColor: "text-[#2d2418] opacity-50",
-    href: "#vatavriksha",
-  },
-];
-
-const metaItems = ["Online", "90 min", "12 participants"];
-
-const detailColumns = [
-  {
-    title: "GOAL",
-    content:
-      "Find and shape stories that illustrate Indiahikes' core motto 'Trekking Transforms Life'. Trek leaders are the faces of this mission — the workshop helped them find and tell personal stories that make that idea real for the trekkers they lead.",
-  },
-  {
-    title: "FORMAT",
-    content:
-      "A 90-minute online 'Listening for Stories' workshop for 12 selected trek leaders. Delivered virtually with small group exercises, reflective prompts, and guided story-sharing.",
-  },
-];
-
-const approachItems = [
-  "Mapped touchpoints across the trek journey to identify where stories matter most",
-  "Selected high-impact techniques and exercises aligned to those key moments",
-  "Prompted leaders to surface stories from their own trekking experiences, not just scripted narratives",
-];
-
-const outcomes = [
-  "Trek leaders crafted personal stories to use in their introductions with trekkers",
-  "Each leader left with a bank of story prompts for richer conversations on the trail",
-  "A story prompt from the session was turned into an Instagram post that generated many meaningful responses",
-];
-
 export default function ShowcasePage() {
+  const [activeProject, setActiveProject] = useState<ProjectKey>("indiahikes");
+  const project = projectData[activeProject];
+  const router = useRouter();
+  const featuredRef = useRef<HTMLElement>(null);
+
+  // Handle hash on mount and hash changes
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash.replace("#", "") as ProjectKey;
+      if (hash && projectData[hash]) {
+        setActiveProject(hash);
+        // Small delay to ensure state is updated before scrolling
+        setTimeout(() => {
+          featuredRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    };
+
+    // Check hash on mount
+    handleHash();
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
+  }, []);
+
+  const handleProjectClick = (key: ProjectKey) => {
+    setActiveProject(key);
+    router.push(`/showcase#${key}`, { scroll: false });
+    setTimeout(() => {
+      featuredRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50);
+  };
+
   return (
     <main className="w-full">
       <Navbar />
@@ -95,9 +181,7 @@ export default function ShowcasePage() {
             Showcase
           </h1>
           <p className="mt-5 max-w-[604px] font-dm text-base font-normal leading-[28.8px] text-[#2d2418] opacity-70">
-            Each project below is a customised storytelling workshop — shaped
-            around a specific team, a specific goal, and a specific moment. No
-            two are the same.
+            Each workshop featured below was designed around the organisation's goal and the participant's contexts.
           </p>
         </div>
       </section>
@@ -115,48 +199,74 @@ export default function ShowcasePage() {
           </header>
 
           <div className="mt-8 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {workshopCards.map((card) => (
-              <div
-                key={card.title}
-                className={`flex flex-col rounded-sm border shadow-none ${card.cardBg} ${card.cardBorder}`}
-              >
-                <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
-                  <div className="flex items-start justify-between gap-4">
-                    <h3 className="font-playfair text-[17.6px] font-semibold leading-[26.4px] text-[#2d2418]">
-                      {card.title}
-                    </h3>
-                    {card.hasBadge && (
-                      <img
-                        className="mt-1 h-4 w-4 shrink-0"
-                        alt=""
-                        src="/text.svg"
-                      />
-                    )}
+            {workshopCards.map((card) => {
+              const isActive = activeProject === card.key;
+              return (
+                <button
+                  key={card.key}
+                  onClick={() => handleProjectClick(card.key)}
+                  className={`flex flex-col rounded-sm border text-left transition-all ${isActive
+                      ? "bg-[#ede8e0] border-[#b5471b]"
+                      : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
+                    }`}
+                >
+                  <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
+                    <div className="flex items-start justify-between gap-4">
+                      <h3 className="font-playfair text-[17.6px] font-semibold leading-[26.4px] text-[#2d2418]">
+                        {card.title}
+                      </h3>
+                      {isActive && (
+                        <svg
+                          className="mt-1 h-4 w-4 shrink-0"
+                          viewBox="0 0 16 16"
+                          fill="none"
+                        >
+                          <path
+                            d="M4 12L12 4M12 4H6M12 4V10"
+                            stroke="#2d2418"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                      )}
+                    </div>
+                    <p className="mt-2 font-dm text-[12.8px] font-medium leading-[19.2px] text-[#b5471b]">
+                      {card.subtitle}
+                    </p>
+                    <p className="mt-3 flex-1 font-dm text-[13.6px] font-medium leading-[22.4px] text-[#2d2418] opacity-70">
+                      {card.description}
+                    </p>
+                    <span
+                      className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${isActive
+                          ? "text-[#b5471b]"
+                          : "text-[#2d2418] opacity-50"
+                        }`}
+                    >
+                      <span>View project</span>
+                      <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none">
+                        <path
+                          d="M2.5 6H9.5M9.5 6L6.5 3M9.5 6L6.5 9"
+                          stroke="currentColor"
+                          strokeWidth="1.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
                   </div>
-                  <p className={`mt-2 font-dm text-[12.8px] font-medium leading-[19.2px] ${card.subtitleColor}`}>
-                    {card.subtitle}
-                  </p>
-                  <p className="mt-3 flex-1 font-dm text-[13.6px] font-medium leading-[22.4px] text-[#2d2418] opacity-70">
-                    {card.description}
-                  </p>
-                  <a
-                    href={card.href}
-                    className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${card.ctaColor}`}
-                  >
-                    <span>View project</span>
-                    <img className="mt-[1px] h-3 w-3 shrink-0" alt="" src="/icon.svg" />
-                  </a>
-                </div>
-              </div>
-            ))}
+                </button>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Featured Project — Indiahikes */}
+      {/* Featured Project */}
       <section
-        id="indiahikes"
-        className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6"
+        ref={featuredRef}
+        id="featured-project"
+        className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6 scroll-mt-20"
       >
         <div className="mx-auto flex w-full max-w-[953px] flex-col">
           <header className="mb-6 flex flex-col gap-3">
@@ -171,13 +281,20 @@ export default function ShowcasePage() {
               {/* Header */}
               <header className="px-6 pb-8 pt-10 sm:px-12">
                 <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
-                  India&apos;s leading trekking organisation
+                  {project.tagline}
                 </p>
                 <h2 className="mt-2 font-playfair text-[30.5px] font-semibold leading-[45.7px] text-[#2d2418]">
-                  Indiahikes
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline decoration-[#b5471b] underline-offset-4"
+                  >
+                    {project.title}
+                  </a>
                 </h2>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  {metaItems.map((item) => (
+                  {project.meta.map((item) => (
                     <span
                       key={item}
                       className="rounded-sm bg-[#ede8e1] px-3 py-[3px] font-dm text-[12.5px] font-normal leading-[18.7px] text-[#2d2418] opacity-85"
@@ -187,50 +304,24 @@ export default function ShowcasePage() {
                   ))}
                 </div>
                 <p className="mt-5 max-w-[638px] font-dm text-[15.5px] font-normal leading-[27.2px] text-[#2d2418] opacity-75">
-                  Explore and craft personal stories that illustrate why
-                  &apos;Trekking Transforms Life&apos; — for trek leaders who
-                  carry that message every day.
+                  {project.intro}
                 </p>
               </header>
 
               {/* Images */}
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-1">
-                <figure className="flex flex-col">
-                  <div
-                    className="h-[297px] w-full bg-[#ddd6cb]"
-                    style={{
-                      background: `url(/imagewithfallback.png) 50% 50% / cover`,
-                    }}
-                  />
-                  <figcaption className="px-4 py-[5px] font-dm text-xs font-normal leading-[18px] text-[#2d2418] opacity-40">
-                    Context
-                  </figcaption>
-                </figure>
-                <figure className="flex flex-col">
-                  <div
-                    className="h-[297px] w-full bg-[#cec5b5]"
-                    style={{
-                      background: `url(/imagewithfallback-1.png) 50% 50% / cover`,
-                    }}
-                  />
-                  <figcaption className="px-4 py-[5px] font-dm text-xs font-normal leading-[18px] text-[#2d2418] opacity-40">
-                    Workshop in progress
-                  </figcaption>
-                </figure>
-              </div>
-
-              {/* Goal & Format */}
-              <div className="grid grid-cols-1 gap-8 border-t border-[#2d241814] px-6 py-10 sm:px-12 md:grid-cols-2">
-                {detailColumns.map((item) => (
-                  <div key={item.title} className="flex flex-col gap-3">
-                    <h3 className="font-dm text-[11.5px] font-medium leading-[17.3px] tracking-[1.15px] text-[#b5471b] uppercase">
-                      {item.title}
-                    </h3>
-                    <p className="font-dm text-[14.9px] font-normal leading-[26px] text-[#2d2418] opacity-80">
-                      {item.content}
-                    </p>
-                  </div>
-                ))}
+                <div
+                  className="h-[297px] w-full bg-[#ddd6cb]"
+                  style={{
+                    background: `url(${project.contextImage}) 50% 50% / cover`,
+                  }}
+                />
+                <div
+                  className="h-[297px] w-full bg-[#cec5b5]"
+                  style={{
+                    background: `url(${project.workshopImage}) 50% 50% / cover`,
+                  }}
+                />
               </div>
 
               {/* Approach */}
@@ -238,12 +329,12 @@ export default function ShowcasePage() {
                 <h3 className="font-dm text-[11.5px] font-medium leading-[17.3px] tracking-[1.15px] text-[#b5471b] uppercase">
                   Approach
                 </h3>
-                <h4 className="mt-3 font-playfair text-[17.6px] font-semibold leading-[26.4px] text-[#2d2418]">
-                  Customisation
-                </h4>
                 <ul className="mt-4 flex flex-col gap-2">
-                  {approachItems.map((item) => (
-                    <li key={item} className="flex items-start gap-[14px] opacity-[0.78]">
+                  {project.approach.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start gap-[14px] opacity-[0.78]"
+                    >
                       <span className="mt-[10px] h-[5px] w-[5px] shrink-0 rounded-[2.5px] bg-[#b5471b] opacity-70" />
                       <span className="font-dm text-[14.7px] font-normal leading-[25px] text-[#2d2418]">
                         {item}
@@ -259,10 +350,10 @@ export default function ShowcasePage() {
                   Outcomes
                 </h3>
                 <ul className="mt-4 flex flex-col gap-3">
-                  {outcomes.map((item) => (
-                    <li key={item} className="flex items-start gap-2">
+                  {project.outcomes.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2">
                       <span className="font-dm text-[14.4px] font-semibold leading-[24.5px] text-[#b5471b]">
-                        →
+                        &rarr;
                       </span>
                       <span className="font-dm text-[14.9px] font-normal leading-[25.3px] text-[#2d2418]">
                         {item}
@@ -279,18 +370,15 @@ export default function ShowcasePage() {
                 </h3>
                 <blockquote className="mt-5 border-l-[3px] border-[#b5471b] pl-[27px]">
                   <p className="font-playfair text-xl font-normal italic leading-[34px] text-[#f7f3ee]">
-                    &ldquo;The session opened up something we didn&apos;t know
-                    we were missing. Our leaders came out with stories they were
-                    genuinely proud to share — and it showed on the next
-                    trek.&rdquo;
+                    &ldquo;{project.quote}&rdquo;
                   </p>
                   <footer className="mt-5">
                     <cite className="not-italic">
                       <span className="block font-playfair text-[15.2px] font-semibold leading-[22.8px] text-[#f7f3ee]">
-                        Rajan
+                        {project.quoteName}
                       </span>
                       <span className="font-dm text-[13.3px] font-normal leading-[19.9px] text-[#f7f3ee8c]">
-                        Experience Leader, Indiahikes
+                        {project.quoteRole}
                       </span>
                     </cite>
                   </footer>
@@ -301,22 +389,23 @@ export default function ShowcasePage() {
         </div>
       </section>
 
-      {/* CTA — dark */}
+      {/* CTA - dark */}
       <section className="relative w-full bg-[#2d2418] px-6 py-24">
         <div className="mx-auto flex w-full max-w-[953px] flex-col items-center text-center">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#f7f3ee8c] uppercase">
-            Your team
+            Get Started
           </p>
           <h2 className="mt-3 font-playfair text-[40.6px] font-semibold leading-[61px] text-[#f7f3ee] max-sm:text-[32px] max-sm:leading-[44px]">
-            Imagine this for your team
+            Let&apos;s plan workshops for your team
           </h2>
-          <p className="mt-4 max-w-[483px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
-            Every workshop is built around your specific context. Let&apos;s
-            talk about what that could look like for your organisation.
+          <p className="mt-4 max-w-[520px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
+            The best first step is a short conversation. Tell me what your team needs - I&apos;ll suggest what might work.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:hello@backstory.hk"
+              href="https://calendly.com/aggarwal-niharikaa/story-workshop-consultation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center rounded-sm bg-[#b5471b] px-8 py-[13px] font-dm text-[15.5px] font-medium leading-[23.3px] text-[#f7f3ee] transition-opacity hover:opacity-90"
             >
               Book a call
@@ -326,7 +415,15 @@ export default function ShowcasePage() {
               className="inline-flex items-center gap-[10px] border-b border-[#f7f3ee4c] pb-[3px] font-dm text-[14.4px] font-normal leading-[21.6px] text-[#f7f3ee] opacity-60 transition-opacity hover:opacity-100"
             >
               <span>See workshop formats</span>
-              <img src="/icon-2.svg" alt="" className="h-[13px] w-[13px]" />
+              <svg className="h-[13px] w-[13px]" viewBox="0 0 13 13" fill="none">
+                <path
+                  d="M2.5 6.5H10.5M10.5 6.5L6.5 2.5M10.5 6.5L6.5 10.5"
+                  stroke="currentColor"
+                  strokeWidth="1.2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </Link>
           </div>
         </div>
