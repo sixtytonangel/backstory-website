@@ -86,7 +86,7 @@ const projectData: Record<
     tagline:
       "Event management company - facilitating a flagship employee event for a top-tier corporate client",
     title: "The MixedBag Company",
-    meta: ["In-person", "90 min", "10 participants"],
+    meta: ["In-person", "60 min", "~100 participants"],
     intro:
       "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
     contextImage: "/mixedbag-context.jpg",
