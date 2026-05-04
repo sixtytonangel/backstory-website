@@ -14,29 +14,29 @@ const workshopCards: {
   subtitle: string;
   description: string;
 }[] = [
-  {
-    key: "indiahikes",
-    title: "Indiahikes",
-    subtitle: "India's leading trekking organisation",
-    description:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
-  },
-  {
-    key: "mixedbag",
-    title: "The MixedBag Company",
-    subtitle:
-      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
-    description:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
-  },
-  {
-    key: "vatavriksha",
-    title: "Vatavriksha",
-    subtitle: "A new wellness studio",
-    description:
-      "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
-  },
-];
+    {
+      key: "indiahikes",
+      title: "Indiahikes",
+      subtitle: "India's leading trekking organisation",
+      description:
+        "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
+    },
+    {
+      key: "mixedbag",
+      title: "The MixedBag Company",
+      subtitle:
+        "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+      description:
+        "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
+    },
+    {
+      key: "vatavriksha",
+      title: "Vatavriksha",
+      subtitle: "A new wellness studio",
+      description:
+        "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
+    },
+  ];
 
 const projectData: Record<
   ProjectKey,
@@ -86,7 +86,7 @@ const projectData: Record<
     tagline:
       "Event management company - facilitating a flagship employee event for a top-tier corporate client",
     title: "The MixedBag Company",
-    meta: ["In-person", "60 min", "~100 participants"],
+    meta: ["In-person", "90 min", "10 participants"],
     intro:
       "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
     contextImage: "/mixedbag-context.jpg",
@@ -211,11 +211,10 @@ export default function ShowcasePage() {
                 <button
                   key={card.key}
                   onClick={() => handleProjectClick(card.key)}
-                  className={`flex flex-col rounded-sm border text-left transition-all ${
-                    isActive
+                  className={`flex flex-col rounded-sm border text-left transition-all ${isActive
                       ? "bg-[#ede8e0] border-[#b5471b]"
                       : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
-                  }`}
+                    }`}
                 >
                   <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
                     <div className="flex items-start justify-between gap-4">
@@ -245,11 +244,10 @@ export default function ShowcasePage() {
                       {card.description}
                     </p>
                     <span
-                      className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${
-                        isActive
+                      className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${isActive
                           ? "text-[#b5471b]"
                           : "text-[#2d2418] opacity-50"
-                      }`}
+                        }`}
                     >
                       <span>View project</span>
                       <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none">
@@ -271,7 +269,7 @@ export default function ShowcasePage() {
       </section>
 
       {/* Featured Project */}
-      <section 
+      <section
         ref={featuredRef}
         id="featured-project"
         className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6 scroll-mt-20"
