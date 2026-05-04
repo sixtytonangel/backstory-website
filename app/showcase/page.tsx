@@ -62,12 +62,12 @@ const projectData: Record<
     meta: ["Online", "90 min", "12 participants"],
     intro:
       "Find stories that illustrate Indiahikes' motto — Trekking Transforms Life.",
-    contextImage: "/Indiahikes-Showcase-1.png",
-    workshopImage: "/Indiahikes-Showcase-2.png",
+    contextImage: "/images/Indiahikes-Showcase-1.png",
+    workshopImage: "/images/Indiahikes-Showcase-2.png",
     approach: [
       "Integrating stories in personal introductions before the trek.",
       "Introducing techniques to bring out stories in conversations during the trek.",
-      "Facilitating reflections at the end of the trek that create space for stories.",
+      "Covering techniques for reflections at the end of the trek that invite stories.",
     ],
     outcomes: [
       "Trek leaders crafted personal stories to use in their introductions with trekkers.",
@@ -87,8 +87,8 @@ const projectData: Record<
     meta: ["In-person", "60 min", "~60 participants"],
     intro:
       "Enable cross-divisional employees to mingle meaningfully at a team building cook-off.",
-    contextImage: "/mixedbag-context.jpg",
-    workshopImage: "/mixedbag-workshop.jpg",
+    contextImage: "images/Mixedbag-showcase-1.png",
+    workshopImage: "images/Mixedbag-showcase-2.png",
     approach: [
       "Niharika shared an entertaining story about her lunch box.",
       "Invited others to share stories through food related prompts in line with the event theme.",
@@ -111,8 +111,8 @@ const projectData: Record<
     meta: ["In-person", "90 min", "10 participants"],
     intro:
       "Introduce the space to wellness practitioners in the city and build a community.",
-    contextImage: "/vatavriksha-context.jpg",
-    workshopImage: "/vatavriksha-workshop.jpg",
+    contextImage: "images/Vatavriksha-Showcase-1.png",
+    workshopImage: "images/Vatavriksha-Showcase-2.png",
     approach: [
       "Group exercises to identify people who are part of their support network.",
       "Writing exercises to bring to life a key moment of finding support.",
@@ -205,8 +205,8 @@ export default function ShowcasePage() {
                   key={card.key}
                   onClick={() => handleProjectClick(card.key)}
                   className={`flex flex-col rounded-sm border text-left transition-all ${isActive
-                      ? "bg-[#ede8e0] border-[#b5471b]"
-                      : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
+                    ? "bg-[#ede8e0] border-[#b5471b]"
+                    : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
                     }`}
                 >
                   <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
@@ -238,8 +238,8 @@ export default function ShowcasePage() {
                     </p>
                     <span
                       className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${isActive
-                          ? "text-[#b5471b]"
-                          : "text-[#2d2418] opacity-50"
+                        ? "text-[#b5471b]"
+                        : "text-[#2d2418] opacity-50"
                         }`}
                     >
                       <span>View project</span>
@@ -310,13 +310,13 @@ export default function ShowcasePage() {
               {/* Images */}
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-1">
                 <div
-                  className="h-[297px] w-full bg-[#ddd6cb]"
+                  className="aspect-square w-full bg-[#ddd6cb]"
                   style={{
                     background: `url(${project.contextImage}) 50% 50% / cover`,
                   }}
                 />
                 <div
-                  className="h-[297px] w-full bg-[#cec5b5]"
+                  className="aspect-square w-full bg-[#cec5b5]"
                   style={{
                     background: `url(${project.workshopImage}) 50% 50% / cover`,
                   }}
