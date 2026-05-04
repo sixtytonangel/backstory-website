@@ -19,22 +19,22 @@ const workshopCards: {
       title: "Indiahikes",
       subtitle: "India's leading trekking organisation",
       description:
-        "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
+        "Find stories that illustrate Indiahikes' motto — Trekking Transforms Life.",
     },
     {
       key: "mixedbag",
       title: "The MixedBag Company",
       subtitle:
-        "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+        "Event management company on behalf of a corporate client",
       description:
-        "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
+        "Enable cross-divisional employees to mingle meaningfully at a team building cook-off.",
     },
     {
       key: "vatavriksha",
       title: "Vatavriksha",
       subtitle: "A new wellness studio",
       description:
-        "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
+        "Introduce the space to wellness practitioners in the city and build a community.",
     },
   ];
 
@@ -61,71 +61,70 @@ const projectData: Record<
     website: "https://indiahikes.com",
     meta: ["Online", "90 min", "12 participants"],
     intro:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
-    contextImage: "/imagewithfallback.png",
-    workshopImage: "/imagewithfallback-1.png",
+      "Find stories that illustrate Indiahikes' motto — Trekking Transforms Life.",
+    contextImage: "/images/Indiahikes-Showcase-1.png",
+    workshopImage: "/images/Indiahikes-Showcase-2.png",
     approach: [
-      "Mapped touchpoints across the trek journey to identify where stories matter most",
-      "Selected high-impact techniques and exercises aligned to those key moments",
-      "Prompted leaders to surface stories from their own trekking experiences, not just scripted narratives",
+      "Integrating stories in personal introductions before the trek.",
+      "Introducing techniques to bring out stories in conversations during the trek.",
+      "Covering techniques for reflections at the end of the trek that invite stories.",
     ],
     outcomes: [
-      "Trek leaders crafted personal stories to use in their introductions with trekkers",
-      "Each leader left with a bank of story prompts for richer conversations on the trail",
-      "A story prompt from the session was turned into an Instagram post that generated many meaningful responses",
+      "Trek leaders crafted personal stories to use in their introductions with trekkers.",
+      "Each leader left with a bank of story prompts for richer conversations on the trail.",
+      "A story prompt from the session was turned into an Instagram post to which 100+ trekkers reponded with stories showcaing Indiahike's motto in action.",
     ],
     quote:
-      "The session opened up something we didn't know we were missing. Our leaders came out with stories they were genuinely proud to share - and it showed on the next trek.",
+      "The first thing that stood out for me was how you had tailored the workshop for us. This wasn't just another template session that you would conduct for anyone else. Each element of the session — from the self-introduction, to the prompts, the reflections, and the discussion in the breakout room (right up to the proposal document!) — was designed for Indiahikes",
     quoteName: "Rajan",
     quoteRole: "Experience Leader, Indiahikes",
   },
   mixedbag: {
     tagline:
-      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+      "Event management company on behalf of a corporate client",
     title: "The MixedBag Company",
     website: "https://www.themixedbagcompany.com",
-    meta: ["In-person", "60 min", "~100 participants"],
+    meta: ["In-person", "60 min", "~60 participants"],
     intro:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
-    contextImage: "/mixedbag-context.jpg",
-    workshopImage: "/mixedbag-workshop.jpg",
+      "Enable cross-divisional employees to mingle meaningfully at a team building cook-off.",
+    contextImage: "images/Mixedbag-showcase-1.png",
+    workshopImage: "images/Mixedbag-showcase-2.png",
     approach: [
-      "Built story prompts around food memories and cultural identity to fit the event theme",
-      "Structured the session so quieter participants were equally included from the start",
-      "Used pair and small-group swaps to lower the stakes and invite genuine sharing",
+      "Niharika shared an entertaining story about her lunch box.",
+      "Invited others to share stories through food related prompts in line with the event theme.",
+      "Encouraged dialogue on the stories by facilitating questions from listeners.",
     ],
 
     outcomes: [
-      "Nearly everyone shared stories, including participants who started out hesitant",
-      "Conversations continued well after the session ended, with many people staying back to talk",
-      "The activity became a highlight of the event according to attendee feedback",
+      "Even those who seemed shy and reluctant to participate at first shared stories.",
+      "After the session, participants continued swapping stories.",
     ],
     quote:
-      "Participants were still talking about it afterwards. It managed to be both fun and genuinely connecting - which is rare at large corporate events.",
+      "In a high-energy corporate setting representing one of Asia's most diversified real estate groups — we asked Niharika to facilitate a storytelling session...The session blended seamlessly into the larger event and left participants feeling heard, energised, and more connected to one another.",
     quoteName: "Tanvi Tilve",
     quoteRole: "Founder, The MixedBag Company",
   },
   vatavriksha: {
     tagline: "A new wellness studio",
     title: "Vatavriksha",
-    website: "https://vatavriksha.com",
+    website: "https://www.instagram.com/vatavriksha_the_synergy_studio/",
     meta: ["In-person", "90 min", "10 participants"],
     intro:
-      "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
-    contextImage: "/vatavriksha-context.jpg",
-    workshopImage: "/vatavriksha-workshop.jpg",
+      "Introduce the space to wellness practitioners in the city and build a community.",
+    contextImage: "images/Vatavriksha-Showcase-1.png",
+    workshopImage: "images/Vatavriksha-Showcase-2.png",
     approach: [
-      "Centred the session on 'story tributes' - stories about people who have shaped each participant's wellbeing journey",
-      "Used personal narrative to bridge practitioners across disciplines (yoga, therapy, nutrition, etc.)",
-      "Designed prompts that made advocacy feel authentic rather than performative",
+      "Group exercises to identify people who are part of their support network.",
+      "Writing exercises to bring to life a key moment of finding support.",
+      "Story shaping and sharing.",
     ],
     outcomes: [
-      "Each participant left with a story they went on to share with a loved one that same evening",
-      "Participants exchanged contacts and immediately began exploring collaboration ideas",
-      "A WhatsApp group formed after the session and became an active ongoing community space",
+      "Each participant left with a story tribute for someone who supported them.",
+      "Participants stayed longer after the session brainstorming collaboration ideas.",
+      "Most participants joined a group created by Vatavriksha to bring the community together.",
     ],
     quote:
-      "It felt like magic - people who had just met were sharing things that felt real and true. The connections that formed that evening have continued to grow.",
+      "The evening at Vatavriksha began with some reservation, as a storytelling workshop was not something we had done before in our yoga space. Our audience was curious but also a bit diffident — but Niharika did a great job of putting them at ease and drawing out their stories...We knew the workshop was a success when we had to ask people to leave as it was time to shut the studio.",
     quoteName: "Shilpa Padmanabhan",
     quoteRole: "Founder, Vatavriksha",
   },
@@ -206,8 +205,8 @@ export default function ShowcasePage() {
                   key={card.key}
                   onClick={() => handleProjectClick(card.key)}
                   className={`flex flex-col rounded-sm border text-left transition-all ${isActive
-                      ? "bg-[#ede8e0] border-[#b5471b]"
-                      : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
+                    ? "bg-[#ede8e0] border-[#b5471b]"
+                    : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
                     }`}
                 >
                   <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
@@ -239,8 +238,8 @@ export default function ShowcasePage() {
                     </p>
                     <span
                       className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${isActive
-                          ? "text-[#b5471b]"
-                          : "text-[#2d2418] opacity-50"
+                        ? "text-[#b5471b]"
+                        : "text-[#2d2418] opacity-50"
                         }`}
                     >
                       <span>View project</span>
@@ -311,13 +310,13 @@ export default function ShowcasePage() {
               {/* Images */}
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-1">
                 <div
-                  className="h-[297px] w-full bg-[#ddd6cb]"
+                  className="aspect-square w-full bg-[#ddd6cb]"
                   style={{
                     background: `url(${project.contextImage}) 50% 50% / cover`,
                   }}
                 />
                 <div
-                  className="h-[297px] w-full bg-[#cec5b5]"
+                  className="aspect-square w-full bg-[#cec5b5]"
                   style={{
                     background: `url(${project.workshopImage}) 50% 50% / cover`,
                   }}

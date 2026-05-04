@@ -94,7 +94,7 @@ const testimonials = [
 
 const workshopMoments = [
   { src: "/images/workshop-feast-story-swap.jpg", alt: "FEAST Workshop Story Swap" },
-  { src: "/images/workshop-feast-korea.jpg", alt: "FEAST Korea wrap up" },
+  { src: "/images/Mixedbag-showcase-2.png", alt: "Mixedbag story swap" },
   { src: "/images/workshop-pune-banter.jpg", alt: "Pune workshops banter" },
   { src: "/images/workshop-udaipur.jpeg", alt: "Udaipur Tales storytelling workshop" },
 ];
