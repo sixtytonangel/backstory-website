@@ -43,12 +43,11 @@ const projectData: Record<
   {
     tagline: string;
     title: string;
+    website: string;
     meta: string[];
     intro: string;
     contextImage: string;
     workshopImage: string;
-    goal: string;
-    format: string;
     approach: string[];
     outcomes: string[];
     quote: string;
@@ -59,14 +58,12 @@ const projectData: Record<
   indiahikes: {
     tagline: "India's leading trekking organisation",
     title: "Indiahikes",
+    website: "https://indiahikes.com",
     meta: ["Online", "90 min", "12 participants"],
     intro:
       "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
     contextImage: "/imagewithfallback.png",
     workshopImage: "/imagewithfallback-1.png",
-    goal: "Find and shape stories that illustrate Indiahikes' core motto 'Trekking Transforms Life'. Trek leaders are the faces of this mission - the workshop helped them find and tell personal stories that make that idea real for the trekkers they lead.",
-    format:
-      "A 90-minute online 'Listening for Stories' workshop for 12 selected trek leaders. Delivered virtually with small group exercises, reflective prompts, and guided story-sharing.",
     approach: [
       "Mapped touchpoints across the trek journey to identify where stories matter most",
       "Selected high-impact techniques and exercises aligned to those key moments",
@@ -86,19 +83,18 @@ const projectData: Record<
     tagline:
       "Event management company - facilitating a flagship employee event for a top-tier corporate client",
     title: "The MixedBag Company",
+    website: "https://www.themixedbagcompany.com",
     meta: ["In-person", "60 min", "~100 participants"],
     intro:
       "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
     contextImage: "/mixedbag-context.jpg",
     workshopImage: "/mixedbag-workshop.jpg",
-    goal: "Design an engaging group activity for roughly 100 employees across levels and divisions, helping them connect in a meaningful way during an annual flagship event.",
-    format:
-      "A 60-minute facilitated story swap centred on food and cultural connection, designed to complement the event's cooking competition and food festival theme.",
     approach: [
       "Built story prompts around food memories and cultural identity to fit the event theme",
       "Structured the session so quieter participants were equally included from the start",
       "Used pair and small-group swaps to lower the stakes and invite genuine sharing",
     ],
+
     outcomes: [
       "Nearly everyone shared stories, including participants who started out hesitant",
       "Conversations continued well after the session ended, with many people staying back to talk",
@@ -112,14 +108,12 @@ const projectData: Record<
   vatavriksha: {
     tagline: "A new wellness studio",
     title: "Vatavriksha",
+    website: "https://vatavriksha.com",
     meta: ["In-person", "90 min", "10 participants"],
     intro:
       "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
     contextImage: "/vatavriksha-context.jpg",
     workshopImage: "/vatavriksha-workshop.jpg",
-    goal: "Help wellness practitioners gather meaningfully at a new studio launch - building genuine relationships with each other and with the space they would be working from.",
-    format:
-      "A 90-minute combined workshop drawing from 'Networking with Stories' and 'Advocating with Stories' formats, designed specifically for a small group of practitioners.",
     approach: [
       "Centred the session on 'story tributes' - stories about people who have shaped each participant's wellbeing journey",
       "Used personal narrative to bridge practitioners across disciplines (yoga, therapy, nutrition, etc.)",
@@ -290,7 +284,14 @@ export default function ShowcasePage() {
                   {project.tagline}
                 </p>
                 <h2 className="mt-2 font-playfair text-[30.5px] font-semibold leading-[45.7px] text-[#2d2418]">
-                  {project.title}
+                  <a
+                    href={project.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline decoration-[#b5471b] underline-offset-4"
+                  >
+                    {project.title}
+                  </a>
                 </h2>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.meta.map((item) => (
@@ -309,48 +310,18 @@ export default function ShowcasePage() {
 
               {/* Images */}
               <div className="grid grid-cols-1 gap-0 md:grid-cols-2 md:gap-1">
-                <figure className="flex flex-col">
-                  <div
-                    className="h-[297px] w-full bg-[#ddd6cb]"
-                    style={{
-                      background: `url(${project.contextImage}) 50% 50% / cover`,
-                    }}
-                  />
-                  <figcaption className="px-4 py-[5px] font-dm text-xs font-normal leading-[18px] text-[#2d2418] opacity-40">
-                    Context
-                  </figcaption>
-                </figure>
-                <figure className="flex flex-col">
-                  <div
-                    className="h-[297px] w-full bg-[#cec5b5]"
-                    style={{
-                      background: `url(${project.workshopImage}) 50% 50% / cover`,
-                    }}
-                  />
-                  <figcaption className="px-4 py-[5px] font-dm text-xs font-normal leading-[18px] text-[#2d2418] opacity-40">
-                    Workshop in progress
-                  </figcaption>
-                </figure>
-              </div>
-
-              {/* Goal & Format */}
-              <div className="grid grid-cols-1 gap-8 border-t border-[#2d241814] px-6 py-10 sm:px-12 md:grid-cols-2">
-                <div className="flex flex-col gap-3">
-                  <h3 className="font-dm text-[11.5px] font-medium leading-[17.3px] tracking-[1.15px] text-[#b5471b] uppercase">
-                    Goal
-                  </h3>
-                  <p className="font-dm text-[14.9px] font-normal leading-[26px] text-[#2d2418] opacity-80">
-                    {project.goal}
-                  </p>
-                </div>
-                <div className="flex flex-col gap-3">
-                  <h3 className="font-dm text-[11.5px] font-medium leading-[17.3px] tracking-[1.15px] text-[#b5471b] uppercase">
-                    Format
-                  </h3>
-                  <p className="font-dm text-[14.9px] font-normal leading-[26px] text-[#2d2418] opacity-80">
-                    {project.format}
-                  </p>
-                </div>
+                <div
+                  className="h-[297px] w-full bg-[#ddd6cb]"
+                  style={{
+                    background: `url(${project.contextImage}) 50% 50% / cover`,
+                  }}
+                />
+                <div
+                  className="h-[297px] w-full bg-[#cec5b5]"
+                  style={{
+                    background: `url(${project.workshopImage}) 50% 50% / cover`,
+                  }}
+                />
               </div>
 
               {/* Approach */}
@@ -358,9 +329,6 @@ export default function ShowcasePage() {
                 <h3 className="font-dm text-[11.5px] font-medium leading-[17.3px] tracking-[1.15px] text-[#b5471b] uppercase">
                   Approach
                 </h3>
-                <h4 className="mt-3 font-playfair text-[17.6px] font-semibold leading-[26.4px] text-[#2d2418]">
-                  Customisation
-                </h4>
                 <ul className="mt-4 flex flex-col gap-2">
                   {project.approach.map((item, i) => (
                     <li
