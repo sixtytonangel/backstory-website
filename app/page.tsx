@@ -148,15 +148,14 @@ export default function HomePage() {
           </div>
           {/* Hero image */}
           <div className="mt-12 flex-shrink-0 md:mt-0">
-            <div className="relative overflow-hidden rounded-lg">
+            <div className="relative h-[300px] w-[300px] overflow-hidden rounded-lg md:h-[380px] md:w-[380px]">
               <Image
                 src="/images/cards-hero.jpg"
                 alt="Workshop activity - Pick a card that describes you best"
-                width={380}
-                height={380}
-                quality={95}
+                fill
                 priority
-                className="h-[300px] w-[300px] object-cover md:h-[380px] md:w-[380px]"
+                quality={95}
+                className="object-cover"
               />
             </div>
           </div>
