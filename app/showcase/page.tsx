@@ -14,29 +14,29 @@ const workshopCards: {
   subtitle: string;
   description: string;
 }[] = [
-  {
-    key: "indiahikes",
-    title: "Indiahikes",
-    subtitle: "India's leading trekking organisation",
-    description:
-      "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
-  },
-  {
-    key: "mixedbag",
-    title: "The MixedBag Company",
-    subtitle:
-      "Event management company - facilitating a flagship employee event for a top-tier corporate client",
-    description:
-      "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
-  },
-  {
-    key: "vatavriksha",
-    title: "Vatavriksha",
-    subtitle: "A new wellness studio",
-    description:
-      "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
-  },
-];
+    {
+      key: "indiahikes",
+      title: "Indiahikes",
+      subtitle: "India's leading trekking organisation",
+      description:
+        "Explore and craft personal stories that illustrate why 'Trekking Transforms Life' - for trek leaders who carry that message every day.",
+    },
+    {
+      key: "mixedbag",
+      title: "The MixedBag Company",
+      subtitle:
+        "Event management company - facilitating a flagship employee event for a top-tier corporate client",
+      description:
+        "Create a genuinely fun and connecting activity for employees across divisions to mingle meaningfully - not just network.",
+    },
+    {
+      key: "vatavriksha",
+      title: "Vatavriksha",
+      subtitle: "A new wellness studio",
+      description:
+        "Introduce a new wellness space to its community of practitioners and build real relationships between them from the start.",
+    },
+  ];
 
 const projectData: Record<
   ProjectKey,
@@ -187,9 +187,7 @@ export default function ShowcasePage() {
             Showcase
           </h1>
           <p className="mt-5 max-w-[604px] font-dm text-base font-normal leading-[28.8px] text-[#2d2418] opacity-70">
-            Each project below is a customised storytelling workshop - shaped
-            around a specific team, a specific goal, and a specific moment. No
-            two are the same.
+            Each workshop featured below was designed around the organisation's goal and the participant's contexts.
           </p>
         </div>
       </section>
@@ -213,11 +211,10 @@ export default function ShowcasePage() {
                 <button
                   key={card.key}
                   onClick={() => handleProjectClick(card.key)}
-                  className={`flex flex-col rounded-sm border text-left transition-all ${
-                    isActive
+                  className={`flex flex-col rounded-sm border text-left transition-all ${isActive
                       ? "bg-[#ede8e0] border-[#b5471b]"
                       : "bg-[#f0ebe3] border-[#2d24181a] hover:border-[#b5471b66]"
-                  }`}
+                    }`}
                 >
                   <div className="flex h-full min-h-[283px] flex-col px-[25px] pb-6 pt-[44px]">
                     <div className="flex items-start justify-between gap-4">
@@ -247,11 +244,10 @@ export default function ShowcasePage() {
                       {card.description}
                     </p>
                     <span
-                      className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${
-                        isActive
+                      className={`mt-5 inline-flex w-fit items-center gap-1 font-dm text-[12.8px] font-medium leading-[19.2px] ${isActive
                           ? "text-[#b5471b]"
                           : "text-[#2d2418] opacity-50"
-                      }`}
+                        }`}
                     >
                       <span>View project</span>
                       <svg className="h-3 w-3" viewBox="0 0 12 12" fill="none">
@@ -273,7 +269,7 @@ export default function ShowcasePage() {
       </section>
 
       {/* Featured Project */}
-      <section 
+      <section
         ref={featuredRef}
         id="featured-project"
         className="relative w-full border-t border-[#2d241814] bg-[#f0ebe3] px-3 py-12 sm:px-6 scroll-mt-20"
@@ -429,18 +425,19 @@ export default function ShowcasePage() {
       <section className="relative w-full bg-[#2d2418] px-6 py-24">
         <div className="mx-auto flex w-full max-w-[953px] flex-col items-center text-center">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#f7f3ee8c] uppercase">
-            Your team
+            Get Started
           </p>
           <h2 className="mt-3 font-playfair text-[40.6px] font-semibold leading-[61px] text-[#f7f3ee] max-sm:text-[32px] max-sm:leading-[44px]">
-            Imagine this for your team
+            Let&apos;s plan workshops for your team
           </h2>
-          <p className="mt-4 max-w-[483px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
-            Every workshop is built around your specific context. Let&apos;s
-            talk about what that could look like for your organisation.
+          <p className="mt-4 max-w-[520px] font-dm text-base font-normal leading-6 text-[#f7f3ee] opacity-65">
+            The best first step is a short conversation. Tell me what your team needs - I&apos;ll suggest what might work.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:hello@backstory.hk"
+              href="https://calendly.com/aggarwal-niharikaa/story-workshop-consultation"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center rounded-sm bg-[#b5471b] px-8 py-[13px] font-dm text-[15.5px] font-medium leading-[23.3px] text-[#f7f3ee] transition-opacity hover:opacity-90"
             >
               Book a call
