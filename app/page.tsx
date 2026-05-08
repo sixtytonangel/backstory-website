@@ -70,14 +70,14 @@ const niharikaTags = [
 
 const testimonials = [
   {
-    quote: "Immediately after your session, I had the opportunity to lead a trek and I actually used this with my team - it worked like a charm. It helped me get to know my team at a deeper level and actually brought us closer.",
+    quote: "...it worked like a charm. It helped me get to know my team at a deeper level and actually brought us closer.",
     name: "Ramon Rajan",
     role: "Team Lead, Indiahikes",
     logo: "/images/logo-indiahikes.jpeg",
     href: "/showcase#indiahikes",
   },
   {
-    quote: "What made the experience special was her ability to create a safe, engaging space where participants could exchange stories with ease and authenticity. Her facilitation was thoughtful and inclusive, making storytelling feel natural rather than performative.",
+    quote: "What made the experience special was her ability to create a safe, engaging space where participants could exchange stories with ease. Her facilitation was thoughtful and inclusive, making storytelling feel natural rather than performative.",
     name: "Tanvi Tilve",
     role: "Founder, The MixedBag Company",
     logo: "/images/logo-mixedbag.avif",
