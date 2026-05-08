@@ -72,7 +72,7 @@ const projectData: Record<
     outcomes: [
       "Trek leaders crafted personal stories to use in their introductions with trekkers.",
       "Each leader left with a bank of story prompts for richer conversations on the trail.",
-      "A story prompt from the session was turned into an Instagram post to which 100+ trekkers reponded with stories showcaing Indiahike's motto in action.",
+      "A story prompt from the session was turned into an Instagram post to which 100+ trekkers reponded with stories showcasing Indiahike's motto in action.",
     ],
     quote:
       "The first thing that stood out for me was how you had tailored the workshop for us. This wasn't just another template session that you would conduct for anyone else. Each element of the session — from the self-introduction, to the prompts, the reflections, and the discussion in the breakout room (right up to the proposal document!) — was designed for Indiahikes",
@@ -192,9 +192,6 @@ export default function ShowcasePage() {
             <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
               Projects
             </p>
-            <h2 className="mt-3 font-playfair text-[30.5px] font-semibold leading-[45.7px] text-[#2d2418] max-md:text-[26px] max-md:leading-[38px]">
-              Three workshops, three very different teams
-            </h2>
           </header>
 
           <div className="mt-8 grid w-full grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">

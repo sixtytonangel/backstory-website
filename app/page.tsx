@@ -163,7 +163,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Context - Value / Why it works */}
+      {/* Context - Value / Where it works */}
       <section className="w-full border-t border-[#2d241814] bg-[#f0ebe3] px-6 py-20">
         <div className="mx-auto w-full max-w-[953px]">
           <p className="font-dm text-xs font-medium leading-[18px] tracking-[1.44px] text-[#b5471b] uppercase">
@@ -171,7 +171,7 @@ export default function HomePage() {
           </p>
           <div className="mt-3 h-0.5 w-10 bg-[#b5471b]" />
           <h2 className="mt-6 font-playfair text-[38px] font-semibold leading-[1.2] text-[#2d2418] md:text-[44px]">
-            Why it works
+            Where it works
           </h2>
 
           <div className="mt-12 flex flex-col divide-y divide-[#2d241820]">
@@ -454,10 +454,10 @@ export default function HomePage() {
               Book a call
             </a>
             <a
-              href="mailto:hello@backstory.co"
+              href="mailto:niharika@backstory.pro"
               className="inline-flex items-center border-b border-[#f7f3ee4c] pb-[3px] font-dm text-[14.4px] font-normal leading-[21.6px] text-[#f7f3ee] opacity-80 transition-opacity hover:opacity-100"
             >
-              Or email me at hello@backstory.co
+              Or email me at niharika@backstory.pro
             </a>
           </div>
         </div>
