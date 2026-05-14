@@ -112,13 +112,10 @@ export default function HomePage() {
               Storytelling Workshops
             </p>
             <h1 className="mt-4 font-playfair text-[48px] font-semibold leading-[1.15] tracking-tight text-[#2d2418] max-w-[480px] md:text-[56px]">
-              You have stories worth sharing
+              Find stories hidden in life experiences
             </h1>
             <p className="mt-6 max-w-[520px] font-dm text-[17px] font-normal leading-[30px] text-[#2d2418] opacity-70">
-              Find stories hidden in life experiences to build deep and genuine connections.
-            </p>
-            <p className="mt-4 font-dm text-[17px] font-medium leading-[30px] text-[#b5471b] italic">
-              Not speech outlines. Not data stories. Just real anecdotes.
+              Share your stories to build deep and genuine connections.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <a
