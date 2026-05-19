@@ -306,7 +306,7 @@ export default function HomePage() {
             {/* Photo */}
             <div className="flex-shrink-0 self-center md:self-center">
               <Image
-                src="/images/nniharika-profile-hks.JPG"
+                src="/images/niharika-profile-hks2.JPG"
                 alt="Niharika - Facilitator and Storyteller"
                 width={220}
                 height={280}
@@ -333,7 +333,7 @@ export default function HomePage() {
               <div className="mt-6 flex flex-col gap-4">
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   I&apos;m Niharika - a facilitator, storyteller, and the person
-                  behind Backstory. Over the last 7 years, I have performed on stages around the world, sharing hundreds of little stories from my life to entertain live audiences. I feel most rewarded when I hear people in the audience say 'that happened to me too!' I truly believe a story is the shortest distance between two people. I have been hosting storytelling workshops for years and I can still remember each participant, not by thier name, but by their stories. 
+                  behind Backstory. Over the last 7 years, I have performed on stages around the world, sharing hundreds of little stories from my life to entertain live audiences. I feel most rewarded when I hear people in the audience say 'that happened to me too!' I truly believe a story is the shortest distance between two people. I have been hosting storytelling workshops for years and I can still remember each participant, not by thier name, but by their stories.
                 </p>
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   I run Hong Kong Stories, a non-profit organisation to help Hong Kongers tell their stories and find a new way to connect with each other, beyond networking drinks and small talk. Before this, I spent 10 years in professional roles at Goldman Sachs and Airdev. I experienced the value of sharing stories to find my voice, understand different pespectives, and collaborate effectively.
@@ -344,7 +344,7 @@ export default function HomePage() {
                   genuine connection.
                 </p>
                 <p className="mt-2 font-dm text-[15px] font-medium leading-[26px] text-[#b5471b] italic">
-                  I am keen to work with teams to explore how storytelling can benefit them. 
+                  I am keen to work with teams to explore how storytelling can benefit them.
                 </p>
               </div>
             </div>
