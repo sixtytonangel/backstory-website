@@ -75,7 +75,7 @@ const projectData: Record<
       "A story prompt from the session was turned into an Instagram post to which 100+ trekkers reponded with stories showcasing Indiahike's motto in action.",
     ],
     quote:
-      "The first thing that stood out for me was how you had tailored the workshop for us. This wasn't just another template session that you would conduct for anyone else. Each element of the session — from the self-introduction, to the prompts, the reflections, and the discussion in the breakout room (right up to the proposal document!) — was designed for Indiahikes",
+      "The first thing that stood out for me was how you had tailored the workshop for us! This wasn’t just another template session that you would conduct for anyone else. Each element of the session, from the self introduction, to the prompts, the reflections and the discussion in the breakout room (right up to the proposal document!) was designed for Indiahikes.",
     quoteName: "Rajan",
     quoteRole: "Experience Leader, Indiahikes",
   },
@@ -100,7 +100,7 @@ const projectData: Record<
       "After the session, participants continued swapping stories.",
     ],
     quote:
-      "In a high-energy corporate setting representing one of Asia's most diversified real estate groups — we asked Niharika to facilitate a storytelling session...The session blended seamlessly into the larger event and left participants feeling heard, energised, and more connected to one another.",
+      "In a high-energy corporate setting representing one of Asia's most diversified real estate groups we asked Niharika to facilitate a storytelling session...The session blended seamlessly into the larger event and left participants feeling energised, and more connected to one another.",
     quoteName: "Tanvi Tilve",
     quoteRole: "Founder, The MixedBag Company",
   },
@@ -124,7 +124,7 @@ const projectData: Record<
       "Most participants joined a group created by Vatavriksha to bring the community together.",
     ],
     quote:
-      "The evening at Vatavriksha began with some reservation, as a storytelling workshop was not something we had done before in our yoga space. Our audience was curious but also a bit diffident — but Niharika did a great job of putting them at ease and drawing out their stories...We knew the workshop was a success when we had to ask people to leave as it was time to shut the studio.",
+      "The evening at Vatavriksha began with some reservation, as a storytelling workshop was not something we had done before in our yoga space. Our audience was curious but also a bit diffident but Niharika did a great job of putting them at ease and drawing out their stories...We knew the workshop was a success when we had to ask people to leave as it was time to shut the studio.",
     quoteName: "Shilpa Padmanabhan",
     quoteRole: "Founder, Vatavriksha",
   },
