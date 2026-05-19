@@ -306,7 +306,7 @@ export default function HomePage() {
             {/* Photo */}
             <div className="flex-shrink-0 self-center md:self-center">
               <Image
-                src="/images/niharika-profile.jpg"
+                src="/images/nniharika-profile-hks.JPG"
                 alt="Niharika - Facilitator and Storyteller"
                 width={220}
                 height={280}
