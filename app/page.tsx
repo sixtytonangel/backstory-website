@@ -339,8 +339,7 @@ export default function HomePage() {
                 </p>
                 <p className="font-dm text-[15px] font-normal leading-[26px] text-[#2d2418] opacity-80">
                   I started Backstory in 2024 to apply storytelling to business
-                  contexts - focusing on life-experience stories as a tool for
-                  genuine connection.
+                  contexts, focusing on finding stories archived in our experiences to build genuine connections.
                 </p>
                 <p className="mt-2 font-dm text-[15px] font-medium leading-[26px] text-[#b5471b] italic">
                   I am keen to work with teams to explore how storytelling can benefit them.
