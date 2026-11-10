@@ -1,16 +1,22 @@
 import type { Metadata } from "next";
-import { Lora, DM_Sans } from "next/font/google";
+import { Fraunces, Source_Sans_3, Caveat } from "next/font/google";
 import "./globals.css";
 
-const playfair = Lora({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  variable: "--font-source",
+  display: "swap",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
   display: "swap",
 });
 
@@ -32,8 +38,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="bg-[#f7f3ee] text-[#2d2418] antialiased">{children}</body>
+    <html lang="en" className={`${fraunces.variable} ${sourceSans.variable} ${caveat.variable}`}>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }
