@@ -15,13 +15,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Backstory — Bring your stories to share",
+  title: "Backstory — Storytelling Workshops for Organisations",
   description:
-    "Backstory hosts story circles, workshops, and talks centred on personal stories.",
+    "Backstory designs and delivers bespoke storytelling workshops for organisations. We help your people find, shape, and share stories that matter.",
   openGraph: {
-    title: "Backstory — Bring your stories to share",
+    title: "Backstory — Storytelling Workshops for Organisations",
     description:
-      "Story circles, workshops, and talks for people, organisations, and schools.",
+      "Backstory designs and delivers bespoke storytelling workshops for organisations.",
     type: "website",
   },
 };
