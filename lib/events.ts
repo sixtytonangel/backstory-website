@@ -62,11 +62,11 @@ export const events: EventItem[] = [
   },
   {
     date: "Sat 21 Mar 2026",
-    title: "Reading Hike",
+    title: "Reading Stories Hike",
     meta: "Social hike · from Tsuen Wan West MTR",
     href: "https://www.eventbrite.hk/e/reading-hike-tickets-1982613394032",
     img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176994273%2F2778646269671%2F1%2Foriginal.20260208-154729?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=35dd5b216cbc22639acada017ca8c981",
-    alt: "Reading Hike event banner",
+    alt: "Reading Stories Hike event banner",
     past: true,
   },
   {
@@ -80,11 +80,11 @@ export const events: EventItem[] = [
   },
   {
     date: "Sat 13 Dec 2025",
-    title: "End-of-year Tea Hike",
+    title: "End-of-year Reflections Hike",
     meta: "Social hike · from Sai Wan Ho MTR",
     href: "https://www.eventbrite.hk/e/end-of-year-tea-hike-tickets-1967620105703",
     img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1170668353%2F2778646269671%2F1%2Foriginal.20251111-083043?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=c5c817d3a9994856c4517ab43bc9d961",
-    alt: "End-of-year Tea Hike event banner",
+    alt: "End-of-year Reflections Hike event banner",
     past: true,
   },
 ];
