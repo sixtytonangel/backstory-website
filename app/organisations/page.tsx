@@ -106,7 +106,7 @@ const projects = [
       "After the session, participants continued swapping stories.",
     ],
     quote:
-      "In a high-energy corporate setting representing one of Asia's most diversified real estate groups we asked Niharika to facilitate a storytelling session… The session blended seamlessly into the larger event and left participants feeling energised, and more connected to one another.",
+      "In a high-energy corporate setting representing one of Asia's biggest real estate groups we asked Niharika to facilitate a storytelling session… The session blended seamlessly into the larger event and left participants feeling energised, and more connected to one another.",
     by: "Tanvi Tilve, Founder, The MixedBag Company",
   },
   {
