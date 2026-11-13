@@ -11,8 +11,6 @@ const lexend = Lexend({
 
 const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  weight: ["400", "600"],
-  style: ["normal", "italic"],
   variable: "--font-source",
   display: "swap",
 });
