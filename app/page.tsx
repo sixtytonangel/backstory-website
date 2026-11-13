@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
 import EventCard from "@/components/EventCard";
-import WorkedWith from "@/components/WorkedWith";
 import { events } from "@/lib/events";
 
 const reasons = [
@@ -56,7 +55,7 @@ const programs = [
     href: "/schools",
     cta: "Explore programs for schools",
     img: "/images/program-schools.jpg",
-    alt: "Students at a storytelling workshop",
+    alt: "A student sharing a story with the group during a school talk",
     dot: "bg-sun",
     link: "text-sun",
   },
@@ -314,8 +313,6 @@ export default function Home() {
             ))}
           </div>
         </section>
-
-        <WorkedWith />
 
         <ContactSection />
       </main>

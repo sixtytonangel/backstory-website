@@ -43,9 +43,9 @@ const sessions = [
 ];
 
 const strip = [
-  { src: "/images/schools-talk.jpg", alt: "Niharika giving a talk to students" },
-  { src: "/images/schools-workshop-1.jpg", alt: "Students at a storytelling workshop" },
-  { src: "/images/schools-workshop-2.jpg", alt: "Students sharing stories in a workshop" },
+  { src: "/images/schools-talk.jpg", alt: "Niharika giving her Seeds to Stories talk to a full school hall" },
+  { src: "/images/schools-workshop-1.jpg", alt: "Niharika helping students write their stories in a workshop" },
+  { src: "/images/schools-workshop-2.jpg", alt: "A student sharing a story with the group during a talk" },
 ];
 
 const schools = [
@@ -119,7 +119,7 @@ export default function Schools() {
               />
               <img
                 src="/images/schools-hero.jpg"
-                alt="Students at the Student Story Slam"
+                alt="Student storytellers, judges and audience at the Student Story Slam 2026"
                 className="relative block aspect-[4/3] w-full rounded-xl object-cover"
               />
             </div>
@@ -193,13 +193,6 @@ export default function Schools() {
               >
                 Join the Story Slam
               </a>
-            </div>
-            <div className="min-w-0 flex-[1_1_380px]">
-              <img
-                src="/images/schools-slam.jpg"
-                alt="Student storytellers at the Story Slam"
-                className="block aspect-[4/3] w-full rounded-xl object-cover"
-              />
             </div>
           </div>
         </section>
