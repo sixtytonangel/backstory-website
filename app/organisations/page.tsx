@@ -269,7 +269,7 @@ export default function Organisations() {
           </div>
         </section>
 
-        <ContactSection intro="Every session is shaped around your people and your occasion. If you have an idea that doesn't fit these, let's chat." />
+        <ContactSection intro="Every session is shaped around your people and your occasion. If you have an idea that doesn't fit the above, let's chat." />
       </main>
       <Footer />
     </>
