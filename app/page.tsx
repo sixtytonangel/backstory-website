@@ -204,8 +204,7 @@ export default function Home() {
               Community events
             </h2>
             <p className="mt-2 max-w-[640px]">
-              Open events where people come together to swap stories, try something new, and make
-              genuine connections.
+              Everyone is invited to experience our open events and collaborations.
             </p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {featuredEvents.map((e) => (

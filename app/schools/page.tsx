@@ -49,7 +49,7 @@ const formats: Offer[] = [
     length: "Multi-session",
     summary: "Courses that end in a show, and storytelling and creative writing ECAs.",
     text: [
-      "Multi-session courses that end in a show, like the storytelling workshop series at Malvern College. Storytelling and creative writing are also taught in ECA programmes with PressStart Academy.",
+      "Multi-session courses that end in a show. Storytelling and creative writing are also taught in ECA programmes with PressStart Academy.",
     ],
     card: "bg-sun text-ink",
     accent: "text-ink",
