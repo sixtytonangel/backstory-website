@@ -194,6 +194,13 @@ export default function Schools() {
                 Join the Story Slam
               </a>
             </div>
+            <div className="min-w-0 flex-[1_1_380px]">
+              <img
+                src="/images/story-slam-performers.png"
+                alt="Nine student storytellers performing at the Student Story Slam"
+                className="block h-auto w-full rounded-xl"
+              />
+            </div>
           </div>
         </section>
 
