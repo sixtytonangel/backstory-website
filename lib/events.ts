@@ -56,6 +56,8 @@ export const events: EventItem[] = [
     title: "Storytelling Workshop: Love Letters",
     meta: "Writing workshop · Online",
     href: "https://www.eventbrite.hk/e/storytelling-workshop-love-letters-tickets-1991539149206",
+    img: "/images/event-love-letters.jpg",
+    alt: "Love Letters poster with a red letterbox",
     past: true,
   },
   {
@@ -63,6 +65,8 @@ export const events: EventItem[] = [
     title: "Reading Hike",
     meta: "Social hike · from Tsuen Wan West MTR",
     href: "https://www.eventbrite.hk/e/reading-hike-tickets-1982613394032",
+    img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1176994273%2F2778646269671%2F1%2Foriginal.20260208-154729?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=35dd5b216cbc22639acada017ca8c981",
+    alt: "Reading Hike event banner",
     past: true,
   },
   {
@@ -70,6 +74,8 @@ export const events: EventItem[] = [
     title: "Photography Hike in Po Toi",
     meta: "Social hike · from Aberdeen",
     href: "https://www.eventbrite.hk/e/photography-hike-in-po-toi-tickets-1979957580422",
+    img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1174183610%2F2778646269671%2F1%2Foriginal.20260107-070144?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=83cf4b65347d45e14318d2337939cab1",
+    alt: "Photography Hike in Po Toi event banner",
     past: true,
   },
   {
@@ -77,6 +83,8 @@ export const events: EventItem[] = [
     title: "End-of-year Tea Hike",
     meta: "Social hike · from Sai Wan Ho MTR",
     href: "https://www.eventbrite.hk/e/end-of-year-tea-hike-tickets-1967620105703",
+    img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1170668353%2F2778646269671%2F1%2Foriginal.20251111-083043?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=c5c817d3a9994856c4517ab43bc9d961",
+    alt: "End-of-year Tea Hike event banner",
     past: true,
   },
 ];
