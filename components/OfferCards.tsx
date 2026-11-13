@@ -2,19 +2,26 @@
 
 import { useEffect, useState } from "react";
 
-export type OfferPart = { title: string; goodFor: string; text: string };
+export type OfferPart = { title: string; goodFor?: string; meta?: string; text: string };
 
 export type Offer = {
   title: string;
   length: string;
-  goodFor: string;
+  goodFor?: string;
+  summary?: string;
   text?: string[];
   parts?: OfferPart[];
   card: string;
   accent: string;
 };
 
-export default function OfferCards({ offers }: { offers: Offer[] }) {
+export default function OfferCards({
+  offers,
+  columns = 2,
+}: {
+  offers: Offer[];
+  columns?: 2 | 3;
+}) {
   const [open, setOpen] = useState<number | null>(null);
   const active = open === null ? null : offers[open];
 
@@ -33,7 +40,7 @@ export default function OfferCards({ offers }: { offers: Offer[] }) {
 
   return (
     <>
-      <div className="mt-8 grid gap-5 md:grid-cols-2">
+      <div className={`mt-8 grid gap-5 md:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""}`}>
         {offers.map((o, i) => (
           <button
             key={o.title}
@@ -41,14 +48,15 @@ export default function OfferCards({ offers }: { offers: Offer[] }) {
             onClick={() => setOpen(i)}
             className={`${o.card} group flex flex-col rounded-xl p-7 text-left transition-transform hover:-translate-y-0.5 sm:p-8`}
           >
-            <span className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-              <span className="font-display text-[22px] font-semibold">{o.title}</span>
-              <span className={`font-display text-[15px] font-semibold ${o.accent}`}>{o.length}</span>
-            </span>
-            <span className="mt-3 text-[16px]">
-              <strong className="font-semibold">Good for: </strong>
-              {o.goodFor}
-            </span>
+            <span className="font-display text-[22px] font-semibold">{o.title}</span>
+            <span className={`mt-1 font-display text-[15px] font-semibold ${o.accent}`}>{o.length}</span>
+            {o.summary && <span className="mt-3 text-[16px]">{o.summary}</span>}
+            {o.goodFor && (
+              <span className="mt-3 text-[16px]">
+                <strong className="font-semibold">Good for: </strong>
+                {o.goodFor}
+              </span>
+            )}
             <span className="mt-auto pt-5 font-display text-[15px] font-semibold underline underline-offset-4">
               Read more
             </span>
@@ -65,7 +73,7 @@ export default function OfferCards({ offers }: { offers: Offer[] }) {
           onClick={() => setOpen(null)}
         >
           <div
-            className="max-h-[90vh] w-full max-w-[860px] overflow-y-auto rounded-xl bg-cream p-7 text-ink sm:p-9"
+            className="max-h-[90vh] w-full max-w-[920px] overflow-y-auto rounded-xl bg-cream p-7 text-ink sm:p-9"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -84,24 +92,31 @@ export default function OfferCards({ offers }: { offers: Offer[] }) {
             </div>
 
             {active.parts ? (
-              <div className="mt-6 grid gap-4 md:grid-cols-2">
+              <div className={`mt-6 grid gap-4 ${active.parts.length > 2 ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
                 {active.parts.map((p) => (
                   <div key={p.title} className="rounded-lg bg-white p-6">
                     <h4 className="font-display text-[19px] font-semibold">{p.title}</h4>
-                    <p className="mt-2 text-[16px]">
-                      <strong className="font-semibold">Good for: </strong>
-                      {p.goodFor}
-                    </p>
-                    <p className="mt-3">{p.text}</p>
+                    {p.meta && (
+                      <p className="mt-1 font-display text-[14px] font-semibold text-[#9c4320]">{p.meta}</p>
+                    )}
+                    {p.goodFor && (
+                      <p className="mt-2 text-[16px]">
+                        <strong className="font-semibold">Good for: </strong>
+                        {p.goodFor}
+                      </p>
+                    )}
+                    <p className="mt-3 text-[16px]">{p.text}</p>
                   </div>
                 ))}
               </div>
             ) : (
               <div className="mt-5 space-y-3">
-                <p className="text-[16px]">
-                  <strong className="font-semibold">Good for: </strong>
-                  {active.goodFor}
-                </p>
+                {active.goodFor && (
+                  <p className="text-[16px]">
+                    <strong className="font-semibold">Good for: </strong>
+                    {active.goodFor}
+                  </p>
+                )}
                 {active.text?.map((t, i) => (
                   <p key={i}>{t}</p>
                 ))}
