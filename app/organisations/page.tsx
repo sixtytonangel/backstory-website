@@ -106,7 +106,7 @@ const projects = [
       "After the session, participants continued swapping stories.",
     ],
     quote:
-      "In a high-energy corporate setting representing one of Asia's biggest real estate groups we asked Niharika to facilitate a storytelling session… The session blended seamlessly into the larger event and left participants feeling energised, and more connected to one another.",
+      "…we asked Niharika to facilitate a storytelling session… The session blended seamlessly into the larger event and left participants feeling energised, and more connected to one another.",
     by: "Tanvi Tilve, Founder, The MixedBag Company",
   },
   {
@@ -207,7 +207,7 @@ export default function Organisations() {
                     <img
                       src={p.img}
                       alt={`${p.name} workshop`}
-                      className="block aspect-[4/3] w-full rounded-lg object-cover"
+                      className="block aspect-square w-full rounded-lg object-cover"
                     />
                   </div>
                   <div className="min-w-0 flex-[2_1_420px]">
