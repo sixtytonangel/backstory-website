@@ -132,9 +132,9 @@ export default function Home() {
         </section>
 
         {/* Formats strip */}
-        <div className="flex flex-wrap justify-center gap-x-5 gap-y-1 bg-sun px-4 py-3 font-display text-[15px] font-medium text-ink">
+        <div className="flex flex-nowrap justify-center gap-x-2.5 whitespace-nowrap bg-sun px-3 py-3 font-display text-[13px] font-medium text-ink sm:gap-x-5 sm:text-[15px]">
           {formats.map((f, i) => (
-            <span key={f} className="flex items-center gap-5">
+            <span key={f} className="flex items-center gap-2.5 sm:gap-5">
               {i > 0 && <span aria-hidden="true">•</span>}
               {f}
             </span>
@@ -265,7 +265,7 @@ export default function Home() {
                 Before this, I spent a decade in finance and tech at Goldman Sachs and Airdev.
               </p>
             </div>
-            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <div className="mt-7 flex flex-col items-start gap-4">
               <a
                 href="https://open.spotify.com/playlist/6PfJVXSECghFJgpD9IrrNf"
                 target="_blank"
@@ -274,22 +274,26 @@ export default function Home() {
               >
                 Listen to my stories
               </a>
-              <a
-                href="https://www.instagram.com/niharika.stories"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display text-[15px] font-medium underline underline-offset-4 hover:text-sun"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://www.linkedin.com/in/niharika-aggarwal-3ab0b891/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-display text-[15px] font-medium underline underline-offset-4 hover:text-sun"
-              >
-                LinkedIn
-              </a>
+              <p className="text-[16px] text-muted">
+                Connect on{" "}
+                <a
+                  href="https://www.linkedin.com/in/niharika-aggarwal-3ab0b891/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-cream underline underline-offset-4 hover:text-sun"
+                >
+                  LinkedIn
+                </a>{" "}
+                or{" "}
+                <a
+                  href="https://www.instagram.com/niharika.stories"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-cream underline underline-offset-4 hover:text-sun"
+                >
+                  Instagram
+                </a>
+              </p>
             </div>
           </div>
         </section>
