@@ -79,7 +79,7 @@ const quotes = [
   },
 ];
 
-const formats = ["Story Circles", "Workshops", "Live Shows", "Student Story Slam"];
+const formats = ["Story Circles", "Workshops", "Live Shows"];
 
 export default function Home() {
   const featuredEvents = events.slice(0, 3);
