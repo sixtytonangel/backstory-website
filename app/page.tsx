@@ -198,7 +198,7 @@ export default function Home() {
         </section>
 
         {/* Community events */}
-        <section id="events" className="bg-cream text-ink">
+        <section id="events" className="border-y border-line bg-panel/40 text-cream">
           <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 md:py-20">
             <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
               Community events
@@ -213,7 +213,7 @@ export default function Home() {
             </div>
             <Link
               href="/events"
-              className="mt-8 inline-flex min-h-[46px] items-center rounded-md border-[1.5px] border-ink px-6 font-display text-[15px] font-semibold hover:bg-ink hover:text-cream"
+              className="mt-8 inline-flex min-h-[46px] items-center rounded-md border-[1.5px] border-cream/60 px-6 font-display text-[15px] font-semibold hover:bg-cream hover:text-ink"
             >
               Show more events
             </Link>

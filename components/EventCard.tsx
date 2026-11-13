@@ -5,7 +5,7 @@ export default function EventCard({ event }: { event: EventItem }) {
   return (
     <article
       className={`relative flex flex-col overflow-hidden rounded-xl transition-shadow hover:shadow-lg ${
-        e.past ? "bg-[#ece4d8] text-[#5c554d]" : "bg-white text-ink"
+        e.past ? "border border-line bg-panel/70 text-muted" : "border border-line bg-panel text-cream"
       }`}
     >
       <div className="relative">
@@ -18,7 +18,7 @@ export default function EventCard({ event }: { event: EventItem }) {
         ) : (
           <div
             aria-hidden="true"
-            className="relative aspect-[3/2] w-full overflow-hidden bg-[#e2d7c7]"
+            className="relative aspect-[3/2] w-full overflow-hidden bg-[#2b2825]"
           >
             <span className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-ember/70" />
             <span className="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-sun/70" />
@@ -26,7 +26,7 @@ export default function EventCard({ event }: { event: EventItem }) {
         )}
         <span
           className={`absolute left-4 top-4 rounded-md px-3 py-1.5 font-display text-[14px] font-semibold ${
-            e.past ? "bg-cream text-[#5c554d]" : "bg-sun text-ink"
+            e.past ? "bg-ink/85 text-muted" : "bg-sun text-ink"
           }`}
         >
           {e.date}
@@ -43,8 +43,8 @@ export default function EventCard({ event }: { event: EventItem }) {
             rel="noopener noreferrer"
             className={`inline-flex min-h-[42px] items-center rounded-md px-5 font-display text-[15px] font-semibold after:absolute after:inset-0 after:content-[''] ${
               e.past
-                ? "border border-[#a69c90] text-[#5c554d] hover:bg-[#e2d7c7]"
-                : "bg-ink text-cream hover:opacity-90"
+                ? "border border-line text-muted hover:bg-ink hover:text-cream"
+                : "bg-sun text-ink hover:opacity-90"
             }`}
           >
             {e.past ? "View event" : "Sign up"}

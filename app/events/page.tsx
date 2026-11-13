@@ -34,7 +34,7 @@ export default function Events() {
           </div>
         </section>
 
-        <section className="bg-cream text-ink">
+        <section className="border-t border-line bg-panel/40 text-cream">
           <div className="mx-auto max-w-[1200px] px-4 py-14 sm:px-6 md:py-16">
             {upcoming.length > 0 && (
               <>
