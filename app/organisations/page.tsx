@@ -16,7 +16,7 @@ const offers: Offer[] = [
     length: "90 minutes",
     goodFor: "Onboarding, team building, wellness events, leadership gatherings, lunch and learns.",
     text: [
-      "A roundtable of facilitated conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (for Indiahikes: experiences connecting people to the mountains).",
+      "A roundtable of facilitated conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (e.g. for Indiahikes: experiences connecting people to the mountains).",
       "People break the ice, learn new things about each other and find threads they didn't know connected them. They start putting a story lens on new experiences, filing them away to pull on when it matters.",
     ],
     card: "bg-cream text-ink",
@@ -58,9 +58,9 @@ const offers: Offer[] = [
     title: "1:1 coaching for leaders",
     length: "45-minute sessions",
     goodFor:
-      "Leaders preparing to speak, and speakers for your events. Also offered to Creative Mornings Hong Kong speakers.",
+      "Leaders preparing to speak, and speakers for your events.",
     text: [
-      "For a keynote, town hall, presentation or performance where your story needs to connect with the room.",
+      "For a keynote, town hall, presentation or performance where your story needs to connect with the room. Also offered to Creative Mornings Hong Kong speakers.",
     ],
     card: "bg-panel text-cream border border-line",
     accent: "text-sun",
@@ -72,7 +72,7 @@ const projects = [
     name: "Indiahikes",
     who: "India's leading trekking organisation",
     logo: "/images/logo-indiahikes.jpeg",
-    goal: "Find stories that illustrate Indiahikes' motto: Trekking Transforms Life.",
+    goal: "Find stories that illustrate the company motto: Trekking Transforms Life.",
     format: "Online · 90 min · 12 participants",
     img: "/images/Indiahikes-Showcase-1.png",
     approach: [
