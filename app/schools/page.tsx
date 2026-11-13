@@ -228,7 +228,7 @@ export default function Schools() {
           </div>
         </section>
 
-        <ContactSection intro="Every session can be shaped around your students, your curriculum and the time you have. If you have something else in mind, let's chat." />
+        <ContactSection intro="Every session can be shaped around your students, your curriculum and the time you have. Get in touch to plan yours." />
       </main>
       <Footer />
     </>
