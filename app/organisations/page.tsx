@@ -192,7 +192,7 @@ export default function Organisations() {
         </section>
 
         {/* Featured projects */}
-        <section id="projects" className="bg-cream text-ink">
+        <section id="projects" className="border-t border-line bg-ink text-cream">
           <div className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 md:py-20">
             <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
               Featured projects
@@ -201,7 +201,7 @@ export default function Organisations() {
               {projects.map((p) => (
                 <article
                   key={p.name}
-                  className="flex flex-wrap gap-8 overflow-hidden rounded-xl bg-white p-6 sm:p-8"
+                  className="flex flex-wrap gap-8 overflow-hidden rounded-xl border border-line bg-panel p-6 sm:p-8"
                 >
                   <div className="min-w-0 flex-[1_1_280px]">
                     <img
@@ -215,11 +215,11 @@ export default function Organisations() {
                       <img
                         src={p.logo}
                         alt=""
-                        className="h-10 w-10 rounded-md border border-[#e6dccd] bg-white object-contain p-1"
+                        className="h-10 w-10 rounded-md border border-line bg-white object-contain p-1"
                       />
                       <div>
                         <p className="font-display text-[15px] font-semibold">{p.name}</p>
-                        <p className="text-[14px] text-[#5c554d]">{p.who}</p>
+                        <p className="text-[14px] text-muted">{p.who}</p>
                       </div>
                     </div>
                     <h3 className="mt-4 font-display text-[24px] font-semibold leading-[1.25] tracking-[-0.01em]">
@@ -232,7 +232,7 @@ export default function Organisations() {
                       <figcaption className="mt-2 text-[15px] font-semibold">{p.by}</figcaption>
                     </figure>
                     <details className="group mt-5">
-                      <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-[#d8cdbd] px-4 py-2 font-display text-[15px] font-semibold hover:bg-cream [&::-webkit-details-marker]:hidden">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-line px-4 py-2 font-display text-[15px] font-semibold hover:bg-ink [&::-webkit-details-marker]:hidden">
                         See how it went
                         <span aria-hidden="true" className="transition-transform group-open:rotate-90">
                           →
@@ -240,7 +240,7 @@ export default function Organisations() {
                       </summary>
                       <div className="mt-5 grid gap-6 sm:grid-cols-2">
                         <div>
-                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#9c4320]">
+                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-ember">
                             Approach
                           </h4>
                           <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
@@ -250,7 +250,7 @@ export default function Organisations() {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#9c4320]">
+                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-ember">
                             Outcomes
                           </h4>
                           <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
@@ -261,7 +261,7 @@ export default function Organisations() {
                         </div>
                       </div>
                     </details>
-                    <p className="mt-5 text-[14px] text-[#6f665b]">{p.format}</p>
+                    <p className="mt-5 text-[14px] text-muted">{p.format}</p>
                   </div>
                 </article>
               ))}
