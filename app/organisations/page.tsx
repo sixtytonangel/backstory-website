@@ -6,76 +6,74 @@ import ContactSection from "@/components/ContactSection";
 export const metadata: Metadata = {
   title: "For organisations | Backstory",
   description:
-    "Story circles, workshops, talks and 1:1 coaching that build storytelling skills and a sense of community at work.",
+    "Story circles, workshops, talks and 1:1 coaching. A real story, told well, brings people closer.",
 };
+
+type Part = { title: string; goodFor: string; text: string };
 
 type Offer = {
   title: string;
   length: string;
-  body: { label?: string; text: string }[];
-  goodFor: string;
+  goodFor?: string;
+  text?: string[];
+  parts?: Part[];
   card: string;
   accent: string;
+  inner?: string;
 };
 
 const offers: Offer[] = [
   {
     title: "Story circles",
     length: "90 minutes",
-    body: [
-      {
-        text: "A roundtable where I facilitate conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (for Indiahikes: experiences connecting people to the mountains).",
-      },
-      {
-        text: "People break the ice, learn new things about each other and find threads they didn't know connected them. They start putting a story lens on new experiences, filing them away to pull on when it matters.",
-      },
-    ],
     goodFor: "Onboarding, team building, wellness events, leadership gatherings, lunch and learns.",
-    card: "bg-cream text-ink rounded-[28px_28px_28px_110px]",
-    accent: "text-flame",
+    text: [
+      "A roundtable where I facilitate conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (for Indiahikes: experiences connecting people to the mountains).",
+      "People break the ice, learn new things about each other and find threads they didn't know connected them. They start putting a story lens on new experiences, filing them away to pull on when it matters.",
+    ],
+    card: "bg-cream text-ink",
+    accent: "text-[#8a5a33]",
   },
   {
     title: "Workshops",
     length: "Starting at 3 hours",
-    body: [
+    parts: [
       {
-        label: "How to tell your stories.",
+        title: "Storytelling",
+        goodFor: "Communication training and leadership training.",
         text: "This workshop focuses on the craft of turning our life experiences into stories that offer windows into our world. We'll brainstorm and sift through story ideas, then each participant will craft one into an engaging narrative. We will explore choices that make our personal stories interesting to listeners: what makes a story stick and when it falls flat. It's a skill that makes our conversations richer and our connections deeper. The workshop will equip participants to practise this skill with confidence and become better storytellers.",
       },
       {
-        label: "Story listening.",
+        title: "Story listening",
+        goodFor:
+          "Manager, mentor and leadership training; sales and marketing teams discovering the stories that already exist rather than pushing narratives.",
         text: "A good storyteller is a great listener. We'll do exercises to listen for stories around us: hold conversations, invite reflections, ask questions that help people open up, and hold space without judgement. It's a very collaborative experience where participants practice active listening and learn a lot about each other.",
       },
     ],
-    goodFor:
-      "Manager, mentor, leadership and communication training; sales and marketing teams discovering the stories that already exist rather than pushing narratives.",
-    card: "bg-flame text-ink rounded-[28px]",
-    accent: "text-cream",
+    card: "bg-tan text-ink",
+    accent: "text-ink",
+    inner: "bg-cream/90",
   },
   {
     title: "Talks and keynotes",
     length: "20 to 40 minutes",
-    body: [
-      {
-        text: "Entertaining, relatable stories that make people realise they have stories too, and so does everyone around them. They inspire people to open windows into their world with the people around them.",
-      },
-    ],
     goodFor:
       "Kicking off offsites and onsites, DE&I events, community programmes, onboarding and orientations.",
-    card: "bg-sun text-ink rounded-[28px_110px_28px_28px]",
+    text: [
+      "Entertaining, relatable stories that make people realise they have stories too, and so does everyone around them. They inspire people to open windows into their world with the people around them.",
+    ],
+    card: "bg-sun text-ink",
     accent: "text-ink",
   },
   {
     title: "1:1 coaching for leaders",
     length: "45-minute sessions",
-    body: [
-      {
-        text: "For a keynote, town hall, presentation or performance where your story needs to connect with the room.",
-      },
-    ],
     goodFor:
       "Leaders preparing to speak, and speakers for your events. I do this for Creative Mornings Hong Kong speakers.",
-    card: "bg-panel text-cream border border-line rounded-[28px]",
+    text: [
+      "For a keynote, town hall, presentation or performance where your story needs to connect with the room.",
+    ],
+    card: "bg-panel text-cream border border-line",
     accent: "text-sun",
   },
 ];
@@ -84,6 +82,7 @@ const projects = [
   {
     name: "Indiahikes",
     who: "India's leading trekking organisation",
+    logo: "/images/logo-indiahikes.jpeg",
     goal: "Find stories that illustrate Indiahikes' motto: Trekking Transforms Life.",
     format: "Online · 90 min · 12 participants",
     img: "/images/Indiahikes-Showcase-1.png",
@@ -104,6 +103,7 @@ const projects = [
   {
     name: "The MixedBag Company",
     who: "Event management company on behalf of a corporate client",
+    logo: "/images/logo-mixedbag.avif",
     goal: "Enable cross-divisional employees to mingle meaningfully at a team building cook-off.",
     format: "In-person · 60 min · ~60 participants",
     img: "/images/Mixedbag-showcase-1.png",
@@ -123,6 +123,7 @@ const projects = [
   {
     name: "Vatavriksha",
     who: "A new wellness studio",
+    logo: "/images/logo-vatavriksha.jpg",
     goal: "Introduce the space to wellness practitioners in the city and build a community.",
     format: "In-person · 90 min · 10 participants",
     img: "/images/Vatavriksha-Showcase-1.png",
@@ -142,6 +143,15 @@ const projects = [
   },
 ];
 
+function GoodFor({ text }: { text: string }) {
+  return (
+    <p className="text-[16px]">
+      <strong className="font-semibold">Good for: </strong>
+      {text}
+    </p>
+  );
+}
+
 export default function Organisations() {
   return (
     <>
@@ -151,26 +161,30 @@ export default function Organisations() {
         <section className="relative">
           <div
             aria-hidden="true"
-            className="absolute -right-32 -top-32 h-[280px] w-[280px] rounded-full bg-flame"
+            className="absolute -right-32 -top-32 h-[200px] w-[200px] rounded-full bg-tan md:h-[280px] md:w-[280px]"
           />
           <div className="relative mx-auto flex max-w-[1200px] flex-wrap items-center gap-12 px-4 pb-16 pt-12 sm:px-6 md:pb-20 md:pt-16">
             <div className="min-w-0 flex-[1_1_440px]">
-              <p className="font-display text-[14px] font-semibold uppercase tracking-[0.12em] text-sun">
-                For organisations
-              </p>
-              <h1 className="mt-3 font-display text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[40px]">
-                Stories emerge when we make room for them.
+              <h1 className="font-display text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[40px]">
+                A real story, told well, brings people closer.
               </h1>
-              <p className="mt-5 max-w-[560px] text-[19px]">
-                Sharing our stories helps us build trust and agency, gain perspective, and become better
-                communicators.
+              <p className="mt-5 max-w-[560px] font-display text-[20px] font-light">
+                We create spaces for stories to emerge.
               </p>
-              <a
-                href="#contact"
-                className="mt-8 inline-flex min-h-[48px] items-center rounded-full bg-flame px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
-              >
-                Let&apos;s chat
-              </a>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <a
+                  href="#contact"
+                  className="inline-flex min-h-[48px] items-center rounded-md bg-tan px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+                >
+                  Plan a session
+                </a>
+                <a
+                  href="#projects"
+                  className="inline-flex min-h-[48px] items-center rounded-md border-[1.5px] border-cream/60 px-6 font-display text-[15px] font-semibold text-cream transition-colors hover:border-cream"
+                >
+                  See featured projects
+                </a>
+              </div>
             </div>
             <div className="relative min-w-0 flex-[1_1_380px]">
               <div
@@ -180,7 +194,7 @@ export default function Organisations() {
               <img
                 src="/images/workshop-feast-story-swap.jpg"
                 alt="A circle of people swapping stories at a workshop"
-                className="relative block aspect-[4/3] w-full rounded-[24px_120px_24px_24px] object-cover"
+                className="relative block aspect-[4/3] w-full rounded-xl object-cover"
               />
             </div>
           </div>
@@ -194,23 +208,35 @@ export default function Organisations() {
           <p className="mt-1 font-display text-[17px] font-light text-cream/90">
             Pick what fits your people and your occasion.
           </p>
-          <div className="mt-8 grid gap-5 md:grid-cols-2">
+          <div className="mt-8 space-y-5">
             {offers.map((o) => (
-              <article key={o.title} className={`${o.card} flex flex-col p-7 sm:p-8`}>
-                <h3 className="font-display text-[22px] font-semibold">{o.title}</h3>
-                <p className={`mt-1 font-display text-[15px] font-semibold ${o.accent}`}>{o.length}</p>
-                <div className="mt-4 space-y-3">
-                  {o.body.map((b, i) => (
-                    <p key={i}>
-                      {b.label && <strong className="font-semibold">{b.label} </strong>}
-                      {b.text}
-                    </p>
-                  ))}
+              <article key={o.title} className={`${o.card} rounded-xl p-7 sm:p-8`}>
+                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                  <h3 className="font-display text-[22px] font-semibold">{o.title}</h3>
+                  <p className={`font-display text-[15px] font-semibold ${o.accent}`}>{o.length}</p>
                 </div>
-                <p className="mt-auto pt-5 text-[16px]">
-                  <strong className="font-semibold">Good for: </strong>
-                  {o.goodFor}
-                </p>
+                {o.parts ? (
+                  <div className="mt-5 grid gap-4 md:grid-cols-2">
+                    {o.parts.map((p) => (
+                      <div key={p.title} className={`${o.inner} rounded-lg p-6`}>
+                        <h4 className="font-display text-[19px] font-semibold">{p.title}</h4>
+                        <div className="mt-2">
+                          <GoodFor text={p.goodFor} />
+                        </div>
+                        <p className="mt-3">{p.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="mt-3 max-w-[900px]">
+                    {o.goodFor && <GoodFor text={o.goodFor} />}
+                    <div className="mt-3 space-y-3">
+                      {o.text?.map((t, i) => (
+                        <p key={i}>{t}</p>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -222,35 +248,37 @@ export default function Organisations() {
             <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
               Featured projects
             </h2>
-            <p className="mt-2 max-w-[640px]">
-              Each workshop featured below was designed around the organisation&apos;s goal and the
-              participants&apos; contexts.
-            </p>
-            <div className="mt-10 space-y-8">
-              {projects.map((p, i) => (
+            <div className="mt-8 space-y-8">
+              {projects.map((p) => (
                 <article
                   key={p.name}
-                  className="flex flex-wrap gap-8 overflow-hidden rounded-[28px] bg-white p-6 sm:p-8"
+                  className="flex flex-wrap gap-8 overflow-hidden rounded-xl bg-white p-6 sm:p-8"
                 >
-                  <div className="min-w-0 flex-[1_1_300px]">
+                  <div className="min-w-0 flex-[1_1_280px]">
                     <img
                       src={p.img}
                       alt={`${p.name} workshop`}
-                      className={`block aspect-[4/3] w-full object-cover ${
-                        i % 2 === 0 ? "rounded-[20px_20px_20px_90px]" : "rounded-[20px_90px_20px_20px]"
-                      }`}
+                      className="block aspect-[4/3] w-full rounded-lg object-cover"
                     />
                   </div>
                   <div className="min-w-0 flex-[2_1_420px]">
-                    <h3 className="font-display text-[22px] font-semibold">{p.name}</h3>
-                    <p className="text-[16px] text-[#5c554d]">{p.who}</p>
-                    <p className="mt-3 font-semibold">{p.goal}</p>
-                    <p className="mt-2 inline-block rounded-full bg-sun px-3 py-1 font-display text-[14px] font-medium">
-                      {p.format}
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={p.logo}
+                        alt=""
+                        className="h-10 w-10 rounded-md border border-[#e6dccd] bg-white object-contain p-1"
+                      />
+                      <div>
+                        <p className="font-display text-[15px] font-semibold">{p.name}</p>
+                        <p className="text-[14px] text-[#5c554d]">{p.who}</p>
+                      </div>
+                    </div>
+                    <h3 className="mt-4 font-display text-[24px] font-semibold leading-[1.25] tracking-[-0.01em]">
+                      {p.goal}
+                    </h3>
                     <div className="mt-5 grid gap-6 sm:grid-cols-2">
                       <div>
-                        <h4 className="font-display text-[15px] font-semibold uppercase tracking-[0.08em] text-flame">
+                        <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#8a5a33]">
                           Approach
                         </h4>
                         <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
@@ -260,7 +288,7 @@ export default function Organisations() {
                         </ul>
                       </div>
                       <div>
-                        <h4 className="font-display text-[15px] font-semibold uppercase tracking-[0.08em] text-flame">
+                        <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#8a5a33]">
                           Outcomes
                         </h4>
                         <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
@@ -270,12 +298,13 @@ export default function Organisations() {
                         </ul>
                       </div>
                     </div>
-                    <figure className="mt-6 border-t border-[#e6dccd] pt-5">
-                      <blockquote className="font-display text-[16px] font-light leading-[1.55]">
+                    <figure className="mt-6 border-l-4 border-sun pl-5">
+                      <blockquote className="font-display text-[17px] font-light leading-[1.55]">
                         “{p.quote}”
                       </blockquote>
                       <figcaption className="mt-2 text-[15px] font-semibold">{p.by}</figcaption>
                     </figure>
+                    <p className="mt-5 text-[14px] text-[#6f665b]">{p.format}</p>
                   </div>
                 </article>
               ))}

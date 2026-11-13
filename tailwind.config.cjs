@@ -15,7 +15,7 @@ module.exports = {
         line: "#34302c",
         cream: "#f6efe6",
         muted: "#c9c0b4",
-        flame: "#E4572E",
+        tan: "#C68B59",
         sun: "#F2B705",
       },
     },

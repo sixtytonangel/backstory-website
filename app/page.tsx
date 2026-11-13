@@ -2,27 +2,36 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import EventCard from "@/components/EventCard";
+import WorkedWith from "@/components/WorkedWith";
+import { events } from "@/lib/events";
 
 const reasons = [
   {
     n: "01",
     title: "To reflect",
-    line: "Looking back at moments from our lives as stories gives us perspective.",
-    card: "bg-cream rounded-[28px_28px_28px_110px]",
-    num: "text-flame",
+    lines: ["Looking back at moments from our lives as stories gives us agency and perspective."],
+    card: "bg-cream",
+    num: "text-[#8a5a33]",
   },
   {
     n: "02",
     title: "To connect",
-    line: "Share a story from your life and you're usually handed one back. That happened to me too! We are same same but different.",
-    card: "bg-flame rounded-[28px]",
+    lines: [
+      "The shortest distance between two people is a story.",
+      "When we tell a story from our lives, we often hear one in return.",
+    ],
+    card: "bg-tan",
     num: "text-cream",
   },
   {
     n: "03",
-    title: "To practice",
-    line: "When a story lands, gahh it feels so good, for the teller and the listener.",
-    card: "bg-sun rounded-[28px_110px_28px_28px]",
+    title: "To become better storytellers",
+    lines: [
+      "When a story lands, it feels so good, for the teller and the listener.",
+      "Our personal stories are the best place to start, because they already matter to us.",
+    ],
+    card: "bg-sun",
     num: "text-ink",
   },
 ];
@@ -35,78 +44,18 @@ const programs = [
     cta: "Explore programs for organisations",
     img: "/images/program-organisations.jpg",
     alt: "Workshop participants raising their hands",
-    dot: "bg-flame",
-    link: "text-flame",
+    dot: "bg-tan",
+    link: "text-tan",
   },
   {
     title: "For schools",
-    text: "Talks, workshops and competitions that help students find personal stories and develop creative confidence.",
+    text: "Talks, workshops and competitions that help students discover their personal stories and build creative confidence.",
     href: "/schools",
     cta: "Explore programs for schools",
     img: "/images/program-schools.jpg",
     alt: "Students at a storytelling workshop",
     dot: "bg-sun",
     link: "text-sun",
-  },
-];
-
-const featuredEvents = [
-  {
-    date: "Sat 14 Nov 2026",
-    title: "Offbeat Sparks HK: Bring Your Stories to Work",
-    meta: "Talk · HKMA, Causeway Bay",
-    status: "Registration full",
-    href: "https://offbeat.works/offbeat-sparks-hk-2026",
-    img: "/images/event-offbeat.jpg",
-    alt: "Niharika speaking on stage",
-    past: false,
-  },
-  {
-    date: "Sat 10 Oct 2026",
-    title: "Storigami: Paperfolding and Storytelling",
-    meta: "Workshop · workshop ten, Kennedy Town",
-    status: "Past event",
-    href: "https://workshopten.com/happenings/storigami-paperfolding-storytelling-workshop/",
-    img: "/images/event-storigami.jpg",
-    alt: "Story prompt cards on a table",
-    past: true,
-  },
-  {
-    date: "8 Aug",
-    title: "Storytelling Workshop with Sanyuja Wellness",
-    meta: "Workshop · Pune",
-    status: "Past event",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLScR1u2D7Yb5ik6pvQ2KNncQ4ipGABYR9pc1W_1drNZ-m5clBQ/viewform",
-    img: "/images/event-pune.jpg",
-    alt: "Participants laughing around a workshop table",
-    past: true,
-  },
-];
-
-const moreEvents = [
-  {
-    date: "Sun 5 Jul 2026",
-    title: "Storytelling Workshop: Love Letters",
-    meta: "Writing workshop · Online",
-    href: "https://www.eventbrite.hk/e/storytelling-workshop-love-letters-tickets-1991539149206",
-  },
-  {
-    date: "Sat 21 Mar 2026",
-    title: "Reading Hike",
-    meta: "Social hike · from Tsuen Wan West MTR",
-    href: "https://www.eventbrite.hk/e/reading-hike-tickets-1982613394032",
-  },
-  {
-    date: "Sat 24 Jan 2026",
-    title: "Photography Hike in Po Toi",
-    meta: "Social hike · from Aberdeen",
-    href: "https://www.eventbrite.hk/e/photography-hike-in-po-toi-tickets-1979957580422",
-  },
-  {
-    date: "Sat 13 Dec 2025",
-    title: "End-of-year Tea Hike",
-    meta: "Social hike · from Sai Wan Ho MTR",
-    href: "https://www.eventbrite.hk/e/end-of-year-tea-hike-tickets-1967620105703",
   },
 ];
 
@@ -122,25 +71,17 @@ const quotes = [
     role: "Teacher, Canadian International School",
   },
   {
-    text: "Within 3 folded flowers, I went from being confused and frustrated to joyful and at ease.",
-    name: "Simon",
-    role: "Storigami participant",
-  },
-  {
     text: "She listened, asked questions, was able to identify themes, connect ideas, and provide a narrative arc to the jumble of ideas I threw at her.",
     name: "Shamima Yasmine",
     role: "Creative Mornings speaker",
   },
-  {
-    text: "The chop-chop editing where necessary and the oodles of patience… and the wild dancing in the wings to battle nerves. That was 100% fun!",
-    name: "Shraddha",
-    role: "Storyteller coached for an international show",
-  },
 ];
 
-const formats = ["Story circles", "Workshops", "Talks", "Live shows", "Student Story Slam"];
+const formats = ["Story Circles", "Workshops", "Talks", "Live Shows", "Student Story Slam"];
 
 export default function Home() {
+  const featuredEvents = events.slice(0, 3);
+
   return (
     <>
       <Navbar />
@@ -149,7 +90,7 @@ export default function Home() {
         <section className="relative">
           <div
             aria-hidden="true"
-            className="absolute -left-24 -top-24 h-[150px] w-[150px] rounded-full bg-flame md:-left-36 md:-top-36 md:h-[300px] md:w-[300px]"
+            className="absolute -left-24 -top-24 h-[150px] w-[150px] rounded-full bg-tan md:-left-36 md:-top-36 md:h-[300px] md:w-[300px]"
           />
           <div className="relative mx-auto flex max-w-[1200px] flex-wrap items-center gap-12 px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-16">
             <div className="min-w-0 flex-[1_1_440px]">
@@ -162,13 +103,13 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#programs"
-                  className="inline-flex min-h-[48px] items-center rounded-full bg-flame px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+                  className="inline-flex min-h-[48px] items-center rounded-md bg-tan px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
                 >
                   Explore Programs
                 </a>
                 <a
                   href="#events"
-                  className="inline-flex min-h-[48px] items-center rounded-full bg-sun px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+                  className="inline-flex min-h-[48px] items-center rounded-md bg-sun px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
                 >
                   Join Events
                 </a>
@@ -182,7 +123,7 @@ export default function Home() {
               <img
                 src="/images/hks-audience.jpg"
                 alt="A Hong Kong Stories audience laughing during a live show"
-                className="relative block aspect-square w-full rounded-[999px_999px_24px_999px] object-cover"
+                className="relative block aspect-[4/3] w-full rounded-xl object-cover"
               />
             </div>
           </div>
@@ -205,10 +146,14 @@ export default function Home() {
           </h2>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {reasons.map((r) => (
-              <article key={r.n} className={`${r.card} p-7 text-ink`}>
+              <article key={r.n} className={`${r.card} rounded-xl p-7 text-ink`}>
                 <p className={`font-display text-[26px] font-bold leading-none ${r.num}`}>{r.n}</p>
-                <h3 className="mb-2 mt-3 font-display text-[22px] font-semibold">{r.title}</h3>
-                <p className="font-semibold">{r.line}</p>
+                <h3 className="mb-2 mt-3 font-display text-[22px] font-semibold leading-[1.25]">{r.title}</h3>
+                {r.lines.map((l, i) => (
+                  <p key={i} className={i === 0 ? "font-semibold" : "mt-2"}>
+                    {l}
+                  </p>
+                ))}
               </article>
             ))}
           </div>
@@ -227,7 +172,7 @@ export default function Home() {
               <Link
                 key={p.title}
                 href={p.href}
-                className="group flex flex-col overflow-hidden rounded-[28px] border border-line bg-panel"
+                className="group flex flex-col overflow-hidden rounded-xl border border-line bg-panel"
               >
                 <span className="relative block overflow-hidden">
                   <img
@@ -257,66 +202,20 @@ export default function Home() {
               Community events
             </h2>
             <p className="mt-2 max-w-[640px]">
-              I partner with communities and spaces to host open events that bring people together to
-              swap stories, try something new, and make genuine connections.
+              Open events where people come together to swap stories, try something new, and make
+              genuine connections.
             </p>
             <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {featuredEvents.map((e) => (
-                <a
-                  key={e.title}
-                  href={e.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex flex-col overflow-hidden rounded-3xl ${
-                    e.past ? "bg-[#ece4d8] text-[#5c554d]" : "bg-white"
-                  }`}
-                >
-                  <span className="relative block">
-                    <img
-                      src={e.img}
-                      alt={e.alt}
-                      className={`block aspect-[3/2] w-full object-cover ${e.past ? "grayscale-[70%]" : ""}`}
-                    />
-                    <span
-                      className={`absolute left-4 top-4 rounded-full px-3 py-1.5 font-display text-[14px] font-semibold ${
-                        e.past ? "bg-cream text-[#5c554d]" : "bg-sun text-ink"
-                      }`}
-                    >
-                      {e.date}
-                    </span>
-                  </span>
-                  <span className="flex flex-1 flex-col gap-1 px-6 pb-6 pt-5">
-                    <span className="font-display text-[19px] font-medium leading-[1.3]">{e.title}</span>
-                    <span className="text-[16px]">{e.meta}</span>
-                    <span className="mt-auto pt-3 text-[15px] font-semibold">{e.status}</span>
-                  </span>
-                </a>
+                <EventCard key={e.title} event={e} />
               ))}
             </div>
-            <details className="group mt-6">
-              <summary className="inline-flex cursor-pointer list-none items-center gap-2 font-display font-semibold [&::-webkit-details-marker]:hidden">
-                More past events
-                <span aria-hidden="true" className="transition-transform group-open:rotate-90">
-                  →
-                </span>
-              </summary>
-              <ul className="mt-4 border-t border-[#d8cdbd]">
-                {moreEvents.map((e) => (
-                  <li key={e.title} className="border-b border-[#d8cdbd]">
-                    <a
-                      href={e.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex flex-wrap items-baseline gap-x-6 gap-y-1 py-4 text-[#5c554d] hover:text-ink"
-                    >
-                      <span className="w-[150px] shrink-0 font-semibold">{e.date}</span>
-                      <span className="min-w-0 flex-1 font-display font-medium">{e.title}</span>
-                      <span className="text-[15px]">{e.meta}</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </details>
+            <Link
+              href="/events"
+              className="mt-8 inline-flex min-h-[46px] items-center rounded-md border-[1.5px] border-ink px-6 font-display text-[15px] font-semibold hover:bg-ink hover:text-cream"
+            >
+              Show more events
+            </Link>
           </div>
         </section>
 
@@ -328,12 +227,12 @@ export default function Home() {
           <div className="relative min-w-0 max-w-[400px] flex-[1_1_300px]">
             <div
               aria-hidden="true"
-              className="absolute -left-8 -top-8 h-[180px] w-[180px] rounded-br-full bg-flame"
+              className="absolute -left-8 -top-8 h-[160px] w-[160px] rounded-full bg-tan"
             />
             <img
               src="/images/niharika-mic.jpg"
               alt="Niharika Aggarwal telling a story at the microphone"
-              className="relative block aspect-square w-full rounded-full object-cover object-[30%_center]"
+              className="relative block aspect-square w-full rounded-xl object-cover object-[30%_center]"
             />
           </div>
           <div className="min-w-0 flex-[1_1_480px]">
@@ -370,7 +269,7 @@ export default function Home() {
                 href="https://open.spotify.com/playlist/6PfJVXSECghFJgpD9IrrNf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[46px] items-center rounded-full border-[1.5px] border-sun px-6 font-display text-[15px] font-semibold text-sun hover:bg-sun hover:text-ink"
+                className="inline-flex min-h-[46px] items-center rounded-md border-[1.5px] border-sun px-6 font-display text-[15px] font-semibold text-sun hover:bg-sun hover:text-ink"
               >
                 Listen to my stories
               </a>
@@ -399,19 +298,21 @@ export default function Home() {
           <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
             What people say
           </h2>
-          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {quotes.map((q, i) => (
-              <figure key={q.name} className="rounded-[28px] border border-line bg-panel p-7">
+              <figure key={q.name} className="rounded-xl border border-line bg-panel p-7">
                 <blockquote className="font-display text-[18px] font-light leading-[1.5]">
                   “{q.text}”
                 </blockquote>
                 <figcaption className="mt-4 text-[15px] text-muted">
-                  <strong className={i % 2 === 0 ? "text-flame" : "text-sun"}>{q.name}</strong>, {q.role}
+                  <strong className={i % 2 === 0 ? "text-tan" : "text-sun"}>{q.name}</strong>, {q.role}
                 </figcaption>
               </figure>
             ))}
           </div>
         </section>
+
+        <WorkedWith />
 
         <ContactSection />
       </main>

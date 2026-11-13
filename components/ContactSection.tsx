@@ -3,13 +3,13 @@ type Props = {
 };
 
 const inputClass =
-  "min-h-[46px] w-full rounded-xl border border-[#4a4540] bg-panel px-4 font-body text-[17px] font-normal text-cream placeholder:text-muted/70 focus:border-sun focus:outline-none";
+  "min-h-[46px] w-full rounded-md border border-[#4a4540] bg-panel px-4 font-body text-[17px] font-normal text-cream placeholder:text-muted/70 focus:border-sun focus:outline-none";
 
 export default function ContactSection({
   intro = "If you're bringing people together, teaching a classroom or preparing to step on stage, I'd love to explore collaborations.",
 }: Props) {
   return (
-    <section id="contact" className="relative overflow-hidden bg-flame text-ink">
+    <section id="contact" className="relative overflow-hidden bg-tan text-ink">
       <div
         aria-hidden="true"
         className="absolute -bottom-32 -right-32 h-[340px] w-[340px] rounded-full bg-sun"
@@ -20,16 +20,17 @@ export default function ContactSection({
             {intro}
           </h2>
           <p className="mt-5 text-[17px]">
-            Or write to me directly at{" "}
+            Email{" "}
             <a href="mailto:niharika@backstory.pro" className="font-semibold underline underline-offset-4">
               niharika@backstory.pro
-            </a>
+            </a>{" "}
+            or fill in this form.
           </p>
         </div>
         <form
           action="https://formspree.io/f/mwlopwjj"
           method="POST"
-          className="grid min-w-0 flex-[1_1_420px] gap-4 rounded-3xl bg-ink p-6 text-cream sm:p-7"
+          className="grid min-w-0 flex-[1_1_420px] gap-4 rounded-xl bg-ink p-6 text-cream sm:p-7"
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-1.5 text-[14px] font-semibold">
@@ -47,17 +48,12 @@ export default function ContactSection({
           </label>
           <label className="grid gap-1.5 text-[14px] font-semibold">
             Message
-            <textarea
-              name="message"
-              rows={4}
-              required
-              className={`${inputClass} resize-y py-3`}
-            />
+            <textarea name="message" rows={4} required className={`${inputClass} resize-y py-3`} />
           </label>
           <input type="hidden" name="_subject" value="New message from backstory.pro" />
           <button
             type="submit"
-            className="justify-self-start rounded-full bg-sun px-7 py-3 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+            className="justify-self-start rounded-md bg-sun px-7 py-3 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
           >
             Send
           </button>

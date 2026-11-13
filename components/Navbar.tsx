@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const navItems = [
   { label: "Programs", href: "/#programs" },
-  { label: "Events", href: "/#events" },
+  { label: "Events", href: "/events" },
   { label: "About", href: "/#about" },
 ];
 
@@ -14,7 +14,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 font-display text-[22px] font-semibold text-cream"
         >
-          <span aria-hidden="true" className="block h-5 w-5 rounded-full bg-flame" />
+          <span aria-hidden="true" className="block h-5 w-5 rounded-full bg-tan" />
           Backstory
         </Link>
         <nav aria-label="Main">
@@ -29,7 +29,7 @@ export default function Navbar() {
             <li>
               <a
                 href="#contact"
-                className="inline-flex min-h-[40px] items-center rounded-full bg-sun px-4 font-medium text-ink transition-opacity hover:opacity-90"
+                className="inline-flex min-h-[40px] items-center rounded-md bg-sun px-4 font-medium text-ink transition-opacity hover:opacity-90"
               >
                 Contact
               </a>

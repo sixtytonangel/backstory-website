@@ -17,6 +17,9 @@ export default function Footer() {
           <Link href="/schools" className="hover:text-cream">
             For schools
           </Link>
+          <Link href="/events" className="hover:text-cream">
+            Events
+          </Link>
           <a href="mailto:niharika@backstory.pro" className="hover:text-cream">
             niharika@backstory.pro
           </a>
