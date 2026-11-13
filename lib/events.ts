@@ -18,9 +18,8 @@ export const events: EventItem[] = [
     subtitle: "Stories on the theme “Done and Dusted”",
     meta: "Live show · Central",
     href: "https://www.eventbrite.com/e/hong-kong-stories-presents-done-and-dusted-tickets-2004274874102",
-    img: "/images/event-done-and-dusted.jpg",
-    alt: "Hong Kong Stories audience laughing during a live show",
-    imgPosition: "object-top",
+    img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1189643441%2F179407172364%2F1%2Foriginal.20260726-151248?crop=focalpoint&fit=crop&w=940&auto=format%2Ccompress&q=75&sharp=10&fp-x=0.5&fp-y=0.5&s=ab471d23adf3336d0c2c94cdbee3eb75",
+    alt: "Hong Kong Stories Done and Dusted event banner",
     past: false,
   },
   {

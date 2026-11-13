@@ -8,7 +8,7 @@ import { events } from "@/lib/events";
 export const metadata: Metadata = {
   title: "Events | Backstory",
   description:
-    "Everyone is invited to experience our open events and collaborations.",
+    "Events from our community collaborations. Open to everyone.",
 };
 
 export default function Events() {
@@ -29,7 +29,7 @@ export default function Events() {
               Community events
             </h1>
             <p className="mt-4 max-w-[640px] text-[19px]">
-              Everyone is invited to experience our open events and collaborations.
+              Events from our community collaborations. Open to everyone.
             </p>
           </div>
         </section>
