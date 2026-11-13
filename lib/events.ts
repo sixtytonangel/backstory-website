@@ -30,6 +30,7 @@ export const events: EventItem[] = [
     href: "https://offbeat.works/offbeat-sparks-hk-2026",
     img: "/images/event-offbeat.jpg",
     alt: "Offbeat Sparks Hong Kong poster with the speakers",
+    imgPosition: "object-bottom",
     past: false,
   },
   {
@@ -38,7 +39,7 @@ export const events: EventItem[] = [
     meta: "Workshop · workshop ten, Kennedy Town",
     href: "https://workshopten.com/happenings/storigami-paperfolding-storytelling-workshop/",
     img: "/images/event-storigami.jpg",
-    alt: "Story prompt cards on a table",
+    alt: "A participant folding an origami lily from a diagram at Storigami",
     past: true,
   },
   {
