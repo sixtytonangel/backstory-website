@@ -15,21 +15,21 @@ const sessions = [
   {
     title: "Stories That Matter",
     meta: "45-minute talk · Up to 200 students",
-    text: "An introduction to the what, why and how of telling stories from our lives. I share relatable, personal stories and break them down to reveal a simple storytelling structure. Interactive elements help students start spotting stories in their own lives, and leave them inspired to shape and share stories that matter to them.",
+    text: "An introduction to the what, why and how of telling stories from our lives. Relatable, personal stories are broken down to reveal a simple storytelling structure. Interactive elements help students start spotting stories in their own lives, and leave them inspired to shape and share stories that matter to them.",
     card: "bg-cream text-ink",
-    accent: "text-[#8a5a33]",
+    accent: "text-[#9c4320]",
   },
   {
     title: "Find Your Stories",
     meta: "90-minute workshop · Up to 30 students",
     text: "Students are led through the process of discovering story ideas from their lives and shaping them into narratives that engage listeners. They work together to help each other find plot and scene details that transport the listener to the centre of the story. At the end of the workshop, each student has a story to tell.",
-    card: "bg-tan text-ink",
+    card: "bg-ember text-ink",
     accent: "text-ink",
   },
   {
     title: "Develop Your Story",
     meta: "90-minute workshop · Up to 30 students",
-    text: "For students to get thoughtful, actionable feedback on their stories from the perspective of listeners. Students come with a loose narrative or skeleton of a story from their life. Working in pairs and groups, they swap stories and learn to listen with intention, guided by me. The group's questions, comments and observations give each storyteller new insight into the strengths and flaws of their story. Students leave equipped to polish it into a cohesive narrative. It's also a wonderful exercise to build trust in a classroom.",
+    text: "For students to get thoughtful, actionable feedback on their stories from the perspective of listeners. Students come with a loose narrative or skeleton of a story from their life. Working in pairs and groups, they swap stories and learn to listen with intention, with guided facilitation. The group's questions, comments and observations give each storyteller new insight into the strengths and flaws of their story. Students leave equipped to polish it into a cohesive narrative. It's also a wonderful exercise to build trust in a classroom.",
     card: "bg-sun text-ink",
     accent: "text-ink",
   },
@@ -54,8 +54,8 @@ const schools = [
   "Po Leung Kuk Centenary College",
   "PHC Wing Kwong College",
   "Renaissance College",
-  "HKU",
-  "HKMU",
+  "The University of Hong Kong",
+  "Hong Kong Metropolitan University",
   "PressStart Academy",
 ];
 
@@ -115,7 +115,7 @@ export default function Schools() {
             <div className="relative min-w-0 flex-[1_1_380px]">
               <div
                 aria-hidden="true"
-                className="absolute -bottom-10 -left-10 h-[170px] w-[170px] rounded-full bg-tan"
+                className="absolute -bottom-10 -left-10 h-[170px] w-[170px] rounded-full bg-ember"
               />
               <img
                 src="/images/schools-hero.jpg"
@@ -154,14 +154,14 @@ export default function Schools() {
             <h3 className="font-display text-[22px] font-semibold">Longer programmes</h3>
             <p className="mt-3 max-w-[820px]">
               Multi-session courses that end in a show, like the storytelling workshop series at Malvern
-              College. I also teach storytelling and creative writing in ECA programmes with PressStart
-              Academy.
+              College. Storytelling and creative writing are also taught in ECA programmes with
+              PressStart Academy.
             </p>
           </div>
         </section>
 
         {/* Student Story Slam */}
-        <section className="relative overflow-hidden bg-tan text-ink">
+        <section className="relative overflow-hidden bg-ember text-ink">
           <div
             aria-hidden="true"
             className="absolute -bottom-24 -left-24 h-[220px] w-[220px] rounded-full bg-sun"
@@ -172,7 +172,7 @@ export default function Schools() {
                 Student Story Slam
               </h2>
               <p className="mt-3 max-w-[560px] text-[19px]">
-                An annual inter-school storytelling competition I organise with Hong Kong Stories. In
+                An annual inter-school storytelling competition organised by Hong Kong Stories. In
                 2026, 96 students from 30 schools took part, with the final round at the Fringe Club.
               </p>
               <dl className="mt-6 flex gap-10 font-display">
@@ -207,7 +207,7 @@ export default function Schools() {
         {/* Schools and quotes */}
         <section className="mx-auto max-w-[1200px] px-4 py-16 sm:px-6 md:py-20">
           <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
-            Schools I&apos;ve worked with
+            Worked with
           </h2>
           <ul className="mt-6 flex flex-wrap gap-3">
             {schools.map((s) => (
@@ -222,7 +222,7 @@ export default function Schools() {
                 <blockquote className="font-display text-[17px] font-light leading-[1.55]">
                   “{q.text}”
                 </blockquote>
-                <figcaption className={`mt-4 text-[15px] font-semibold ${i % 2 === 0 ? "text-tan" : "text-sun"}`}>
+                <figcaption className={`mt-4 text-[15px] font-semibold ${i % 2 === 0 ? "text-ember" : "text-sun"}`}>
                   {q.by}
                 </figcaption>
               </figure>

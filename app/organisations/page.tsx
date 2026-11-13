@@ -2,24 +2,12 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactSection from "@/components/ContactSection";
+import OfferCards, { type Offer } from "@/components/OfferCards";
 
 export const metadata: Metadata = {
   title: "For organisations | Backstory",
   description:
     "Story circles, workshops, talks and 1:1 coaching. A real story, told well, brings people closer.",
-};
-
-type Part = { title: string; goodFor: string; text: string };
-
-type Offer = {
-  title: string;
-  length: string;
-  goodFor?: string;
-  text?: string[];
-  parts?: Part[];
-  card: string;
-  accent: string;
-  inner?: string;
 };
 
 const offers: Offer[] = [
@@ -28,15 +16,17 @@ const offers: Offer[] = [
     length: "90 minutes",
     goodFor: "Onboarding, team building, wellness events, leadership gatherings, lunch and learns.",
     text: [
-      "A roundtable where I facilitate conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (for Indiahikes: experiences connecting people to the mountains).",
+      "A roundtable of facilitated conversations that surface stories. Prompts can be open-ended, thematic (Baby Steps, Fresh Starts, Epic Fails), or tailored to your context (for Indiahikes: experiences connecting people to the mountains).",
       "People break the ice, learn new things about each other and find threads they didn't know connected them. They start putting a story lens on new experiences, filing them away to pull on when it matters.",
     ],
     card: "bg-cream text-ink",
-    accent: "text-[#8a5a33]",
+    accent: "text-[#9c4320]",
   },
   {
     title: "Workshops",
     length: "Starting at 3 hours",
+    goodFor:
+      "Communication, leadership, manager and mentor training; sales and marketing teams discovering the stories that already exist.",
     parts: [
       {
         title: "Storytelling",
@@ -50,9 +40,8 @@ const offers: Offer[] = [
         text: "A good storyteller is a great listener. We'll do exercises to listen for stories around us: hold conversations, invite reflections, ask questions that help people open up, and hold space without judgement. It's a very collaborative experience where participants practice active listening and learn a lot about each other.",
       },
     ],
-    card: "bg-tan text-ink",
+    card: "bg-ember text-ink",
     accent: "text-ink",
-    inner: "bg-cream/90",
   },
   {
     title: "Talks and keynotes",
@@ -69,7 +58,7 @@ const offers: Offer[] = [
     title: "1:1 coaching for leaders",
     length: "45-minute sessions",
     goodFor:
-      "Leaders preparing to speak, and speakers for your events. I do this for Creative Mornings Hong Kong speakers.",
+      "Leaders preparing to speak, and speakers for your events. Also offered to Creative Mornings Hong Kong speakers.",
     text: [
       "For a keynote, town hall, presentation or performance where your story needs to connect with the room.",
     ],
@@ -143,15 +132,6 @@ const projects = [
   },
 ];
 
-function GoodFor({ text }: { text: string }) {
-  return (
-    <p className="text-[16px]">
-      <strong className="font-semibold">Good for: </strong>
-      {text}
-    </p>
-  );
-}
-
 export default function Organisations() {
   return (
     <>
@@ -161,7 +141,7 @@ export default function Organisations() {
         <section className="relative">
           <div
             aria-hidden="true"
-            className="absolute -right-32 -top-32 h-[200px] w-[200px] rounded-full bg-tan md:h-[280px] md:w-[280px]"
+            className="absolute -right-32 -top-32 h-[200px] w-[200px] rounded-full bg-ember md:h-[280px] md:w-[280px]"
           />
           <div className="relative mx-auto flex max-w-[1200px] flex-wrap items-center gap-12 px-4 pb-16 pt-12 sm:px-6 md:pb-20 md:pt-16">
             <div className="min-w-0 flex-[1_1_440px]">
@@ -174,7 +154,7 @@ export default function Organisations() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#contact"
-                  className="inline-flex min-h-[48px] items-center rounded-md bg-tan px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+                  className="inline-flex min-h-[48px] items-center rounded-md bg-ember px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
                 >
                   Plan a session
                 </a>
@@ -208,38 +188,7 @@ export default function Organisations() {
           <p className="mt-1 font-display text-[17px] font-light text-cream/90">
             Pick what fits your people and your occasion.
           </p>
-          <div className="mt-8 space-y-5">
-            {offers.map((o) => (
-              <article key={o.title} className={`${o.card} rounded-xl p-7 sm:p-8`}>
-                <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                  <h3 className="font-display text-[22px] font-semibold">{o.title}</h3>
-                  <p className={`font-display text-[15px] font-semibold ${o.accent}`}>{o.length}</p>
-                </div>
-                {o.parts ? (
-                  <div className="mt-5 grid gap-4 md:grid-cols-2">
-                    {o.parts.map((p) => (
-                      <div key={p.title} className={`${o.inner} rounded-lg p-6`}>
-                        <h4 className="font-display text-[19px] font-semibold">{p.title}</h4>
-                        <div className="mt-2">
-                          <GoodFor text={p.goodFor} />
-                        </div>
-                        <p className="mt-3">{p.text}</p>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mt-3 max-w-[900px]">
-                    {o.goodFor && <GoodFor text={o.goodFor} />}
-                    <div className="mt-3 space-y-3">
-                      {o.text?.map((t, i) => (
-                        <p key={i}>{t}</p>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </article>
-            ))}
-          </div>
+          <OfferCards offers={offers} />
         </section>
 
         {/* Featured projects */}
@@ -276,34 +225,42 @@ export default function Organisations() {
                     <h3 className="mt-4 font-display text-[24px] font-semibold leading-[1.25] tracking-[-0.01em]">
                       {p.goal}
                     </h3>
-                    <div className="mt-5 grid gap-6 sm:grid-cols-2">
-                      <div>
-                        <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#8a5a33]">
-                          Approach
-                        </h4>
-                        <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
-                          {p.approach.map((a) => (
-                            <li key={a}>{a}</li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div>
-                        <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#8a5a33]">
-                          Outcomes
-                        </h4>
-                        <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
-                          {p.outcomes.map((o) => (
-                            <li key={o}>{o}</li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
-                    <figure className="mt-6 border-l-4 border-sun pl-5">
+                    <figure className="mt-5 border-l-4 border-sun pl-5">
                       <blockquote className="font-display text-[17px] font-light leading-[1.55]">
                         “{p.quote}”
                       </blockquote>
                       <figcaption className="mt-2 text-[15px] font-semibold">{p.by}</figcaption>
                     </figure>
+                    <details className="group mt-5">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-[#d8cdbd] px-4 py-2 font-display text-[15px] font-semibold hover:bg-cream [&::-webkit-details-marker]:hidden">
+                        See how it went
+                        <span aria-hidden="true" className="transition-transform group-open:rotate-90">
+                          →
+                        </span>
+                      </summary>
+                      <div className="mt-5 grid gap-6 sm:grid-cols-2">
+                        <div>
+                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#9c4320]">
+                            Approach
+                          </h4>
+                          <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
+                            {p.approach.map((a) => (
+                              <li key={a}>{a}</li>
+                            ))}
+                          </ul>
+                        </div>
+                        <div>
+                          <h4 className="font-display text-[14px] font-semibold uppercase tracking-[0.08em] text-[#9c4320]">
+                            Outcomes
+                          </h4>
+                          <ul className="mt-2 list-disc space-y-1 pl-5 text-[16px]">
+                            {p.outcomes.map((o) => (
+                              <li key={o}>{o}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                    </details>
                     <p className="mt-5 text-[14px] text-[#6f665b]">{p.format}</p>
                   </div>
                 </article>

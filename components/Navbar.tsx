@@ -14,7 +14,7 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 font-display text-[22px] font-semibold text-cream"
         >
-          <span aria-hidden="true" className="block h-5 w-5 rounded-full bg-tan" />
+          <span aria-hidden="true" className="block h-5 w-5 rounded-full bg-ember" />
           Backstory
         </Link>
         <nav aria-label="Main">

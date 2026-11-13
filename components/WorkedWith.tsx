@@ -1,6 +1,6 @@
-// Logos: add a file to /public/images/logos and set `logo` to show the image instead of the name.
+// Logos: add a file to /public/images and set `logo` to show the image instead of the name.
 const partners: { name: string; logo?: string }[] = [
-  { name: "Canadian International School", logo: undefined },
+  { name: "Canadian International School" },
   { name: "Renaissance College" },
   { name: "Po Leung Kuk Centenary College" },
   { name: "PressStart Academy" },
@@ -20,20 +20,18 @@ export default function WorkedWith() {
       <h2 className="font-display text-[26px] font-semibold tracking-[-0.01em] md:text-[30px]">
         Worked with
       </h2>
-      <ul className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+      <ul className="mt-8 flex flex-wrap items-center gap-x-10 gap-y-6">
         {partners.map((p) => (
-          <li
-            key={p.name}
-            className="flex h-24 items-center justify-center rounded-lg bg-cream px-3 text-center"
-          >
+          <li key={p.name} className="flex h-12 items-center">
             {p.logo ? (
               <img
                 src={p.logo}
                 alt={p.name}
-                className="max-h-14 max-w-[80%] object-contain grayscale"
+                title={p.name}
+                className="h-12 max-w-[140px] rounded-sm object-contain"
               />
             ) : (
-              <span className="font-display text-[14px] font-semibold leading-tight text-[#4a4540]">
+              <span className="max-w-[180px] font-display text-[14px] font-semibold leading-tight text-cream/80">
                 {p.name}
               </span>
             )}

@@ -10,9 +10,12 @@ const reasons = [
   {
     n: "01",
     title: "To reflect",
-    lines: ["Looking back at moments from our lives as stories gives us agency and perspective."],
+    lines: [
+      "Stories help us make sense of the world.",
+      "Looking back at moments from our lives as stories gives us perspective.",
+    ],
     card: "bg-cream",
-    num: "text-[#8a5a33]",
+    num: "text-[#9c4320]",
   },
   {
     n: "02",
@@ -21,15 +24,15 @@ const reasons = [
       "The shortest distance between two people is a story.",
       "When we tell a story from our lives, we often hear one in return.",
     ],
-    card: "bg-tan",
+    card: "bg-ember",
     num: "text-cream",
   },
   {
     n: "03",
-    title: "To become better storytellers",
+    title: "To learn the craft",
     lines: [
-      "When a story lands, it feels so good, for the teller and the listener.",
-      "Our personal stories are the best place to start, because they already matter to us.",
+      "Our intuition for storytelling builds with practice.",
+      "Stories that matter to us are a great place to start.",
     ],
     card: "bg-sun",
     num: "text-ink",
@@ -44,8 +47,8 @@ const programs = [
     cta: "Explore programs for organisations",
     img: "/images/program-organisations.jpg",
     alt: "Workshop participants raising their hands",
-    dot: "bg-tan",
-    link: "text-tan",
+    dot: "bg-ember",
+    link: "text-ember",
   },
   {
     title: "For schools",
@@ -77,7 +80,7 @@ const quotes = [
   },
 ];
 
-const formats = ["Story Circles", "Workshops", "Talks", "Live Shows", "Student Story Slam"];
+const formats = ["Story Circles", "Workshops", "Live Shows", "Student Story Slam"];
 
 export default function Home() {
   const featuredEvents = events.slice(0, 3);
@@ -90,7 +93,7 @@ export default function Home() {
         <section className="relative">
           <div
             aria-hidden="true"
-            className="absolute -left-24 -top-24 h-[150px] w-[150px] rounded-full bg-tan md:-left-36 md:-top-36 md:h-[300px] md:w-[300px]"
+            className="absolute -left-24 -top-24 h-[150px] w-[150px] rounded-full bg-ember md:-left-36 md:-top-36 md:h-[300px] md:w-[300px]"
           />
           <div className="relative mx-auto flex max-w-[1200px] flex-wrap items-center gap-12 px-4 pb-20 pt-12 sm:px-6 md:pb-24 md:pt-16">
             <div className="min-w-0 flex-[1_1_440px]">
@@ -103,7 +106,7 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href="#programs"
-                  className="inline-flex min-h-[48px] items-center rounded-md bg-tan px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
+                  className="inline-flex min-h-[48px] items-center rounded-md bg-ember px-6 font-display text-[15px] font-semibold text-ink transition-opacity hover:opacity-90"
                 >
                   Explore Programs
                 </a>
@@ -227,7 +230,7 @@ export default function Home() {
           <div className="relative min-w-0 max-w-[400px] flex-[1_1_300px]">
             <div
               aria-hidden="true"
-              className="absolute -left-8 -top-8 h-[160px] w-[160px] rounded-full bg-tan"
+              className="absolute -left-8 -top-8 h-[160px] w-[160px] rounded-full bg-ember"
             />
             <img
               src="/images/niharika-mic.jpg"
@@ -305,7 +308,7 @@ export default function Home() {
                   “{q.text}”
                 </blockquote>
                 <figcaption className="mt-4 text-[15px] text-muted">
-                  <strong className={i % 2 === 0 ? "text-tan" : "text-sun"}>{q.name}</strong>, {q.role}
+                  <strong className={i % 2 === 0 ? "text-ember" : "text-sun"}>{q.name}</strong>, {q.role}
                 </figcaption>
               </figure>
             ))}

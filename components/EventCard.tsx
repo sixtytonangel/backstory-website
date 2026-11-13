@@ -20,7 +20,7 @@ export default function EventCard({ event }: { event: EventItem }) {
             aria-hidden="true"
             className="relative aspect-[3/2] w-full overflow-hidden bg-[#e2d7c7]"
           >
-            <span className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-tan/70" />
+            <span className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-ember/70" />
             <span className="absolute -left-6 -top-6 h-20 w-20 rounded-full bg-sun/70" />
           </div>
         )}

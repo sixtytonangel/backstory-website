@@ -6,10 +6,10 @@ const inputClass =
   "min-h-[46px] w-full rounded-md border border-[#4a4540] bg-panel px-4 font-body text-[17px] font-normal text-cream placeholder:text-muted/70 focus:border-sun focus:outline-none";
 
 export default function ContactSection({
-  intro = "If you're bringing people together, teaching a classroom or preparing to step on stage, I'd love to explore collaborations.",
+  intro = "If you're bringing people together, teaching a classroom or preparing to step on stage, we'd love to explore collaborations.",
 }: Props) {
   return (
-    <section id="contact" className="relative overflow-hidden bg-tan text-ink">
+    <section id="contact" className="relative overflow-hidden bg-ember text-ink">
       <div
         aria-hidden="true"
         className="absolute -bottom-32 -right-32 h-[340px] w-[340px] rounded-full bg-sun"

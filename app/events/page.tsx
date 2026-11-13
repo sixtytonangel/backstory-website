@@ -22,7 +22,7 @@ export default function Events() {
         <section className="relative">
           <div
             aria-hidden="true"
-            className="absolute -right-24 -top-24 h-[180px] w-[180px] rounded-full bg-tan md:h-[260px] md:w-[260px]"
+            className="absolute -right-24 -top-24 h-[180px] w-[180px] rounded-full bg-ember md:h-[260px] md:w-[260px]"
           />
           <div className="relative mx-auto max-w-[1200px] px-4 pb-10 pt-12 sm:px-6 md:pt-16">
             <h1 className="font-display text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[40px]">
@@ -56,7 +56,7 @@ export default function Events() {
           </div>
         </section>
 
-        <ContactSection intro="Want to host a story event with your community or space? I'd love to hear about it." />
+        <ContactSection intro="Want to host an event with your community or space? We'd love to hear about it." />
       </main>
       <Footer />
     </>
