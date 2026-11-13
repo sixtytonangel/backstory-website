@@ -8,6 +8,11 @@ const nextConfig = {
     "*.replit.dev",
     "*.repl.co",
   ],
+  async redirects() {
+    return [
+      { source: "/showcase", destination: "/organisations#projects", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;

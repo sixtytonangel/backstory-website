@@ -1,27 +1,30 @@
 import type { Metadata } from "next";
-import { Lora, DM_Sans } from "next/font/google";
+import { Lexend, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 
-const playfair = Lora({
+const lexend = Lexend({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-lexend",
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-dm-sans",
+  weight: ["400", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-source",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Backstory — Storytelling Workshops for Organisations",
+  title: "Backstory: personal storytelling with Niharika Aggarwal",
   description:
-    "Backstory designs and delivers bespoke storytelling workshops for organisations. We help your people find, shape, and share stories that matter.",
+    "Experience the joy of sharing personal stories and become a better storyteller along the way. Story circles, workshops and talks for organisations, schools and communities in Hong Kong.",
   openGraph: {
-    title: "Backstory — Storytelling Workshops for Organisations",
+    title: "Backstory: personal storytelling with Niharika Aggarwal",
     description:
-      "Backstory designs and delivers bespoke storytelling workshops for organisations.",
+      "Story circles, workshops and talks for organisations, schools and communities.",
     type: "website",
   },
 };
@@ -32,8 +35,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body className="bg-[#f7f3ee] text-[#2d2418] antialiased">{children}</body>
+    <html lang="en" className={`${lexend.variable} ${sourceSans.variable}`}>
+      <body className="bg-[#121110] font-body text-[#f6efe6] antialiased">
+        {children}
+      </body>
     </html>
   );
 }

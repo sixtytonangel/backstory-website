@@ -5,9 +5,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
   }
   body {
-    background-color: #f7f3ee;
-    color: #2d2418;
+    background-color: #121110;
+    color: #f6efe6;
+    font-size: 18px;
+    line-height: 1.6;
   }
 }
