@@ -6,6 +6,7 @@ export type EventItem = {
   href: string;
   img?: string;
   alt?: string;
+  imgPosition?: string;
   past: boolean;
 };
 
@@ -18,7 +19,8 @@ export const events: EventItem[] = [
     meta: "Live show · Central",
     href: "https://www.eventbrite.com/e/hong-kong-stories-presents-done-and-dusted-tickets-2004274874102",
     img: "/images/event-done-and-dusted.jpg",
-    alt: "A Hong Kong Stories audience laughing during a live show",
+    alt: "Hong Kong Stories audience laughing during a live show",
+    imgPosition: "object-top",
     past: false,
   },
   {

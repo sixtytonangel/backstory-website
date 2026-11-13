@@ -13,7 +13,7 @@ export default function EventCard({ event }: { event: EventItem }) {
           <img
             src={e.img}
             alt={e.alt ?? ""}
-            className={`block aspect-[3/2] w-full object-cover ${e.past ? "grayscale-[70%]" : ""}`}
+            className={`block aspect-[3/2] w-full object-cover ${e.imgPosition ?? ""} ${e.past ? "grayscale-[70%]" : ""}`}
           />
         ) : (
           <div
