@@ -16,7 +16,7 @@ const formats: Offer[] = [
   {
     title: "Talk",
     length: "45 minutes · Up to 200 students",
-    summary: "Entertaining, relatable stories that make students realise they have stories too, and tips on storytelling.",
+    summary: "Practical tips on storytelling through entertaining, relatable personal stories that make students realise they have stories too.",
     text: [
       "An introduction to the what, why and how of telling stories from our lives. Relatable, personal stories are broken down to reveal a simple storytelling structure. Interactive elements help students start spotting stories in their own lives, and leave them inspired to shape and share stories that matter to them.",
     ],
@@ -26,7 +26,7 @@ const formats: Offer[] = [
   {
     title: "Workshops",
     length: "90 minutes · Up to 30 students",
-    summary: "Students learn the craft of storytelling by working on their own stories collaboratively.",
+    summary: "Students learn the craft of storytelling by collaboratively working on their own stories.",
     parts: [
       {
         title: "Find Your Stories",
