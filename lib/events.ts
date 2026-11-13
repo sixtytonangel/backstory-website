@@ -29,7 +29,7 @@ export const events: EventItem[] = [
     meta: "Talk · HKMA, Causeway Bay",
     href: "https://offbeat.works/offbeat-sparks-hk-2026",
     img: "/images/event-offbeat.jpg",
-    alt: "Niharika speaking on stage",
+    alt: "Offbeat Sparks Hong Kong poster with the speakers",
     past: false,
   },
   {
