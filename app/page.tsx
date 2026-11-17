@@ -123,9 +123,9 @@ export default function Home() {
                 className="absolute -bottom-12 -right-12 h-[200px] w-[200px] rounded-full bg-sun"
               />
               <img
-                src="/images/hks-audience.jpg"
-                alt="A Hong Kong Stories audience laughing during a live show"
-                className="relative block aspect-[4/3] w-full rounded-xl object-cover"
+                src="/images/hero-niharika-workshop.jpg"
+                alt="Niharika speaking with a microphone to a smiling workshop audience"
+                className="relative block aspect-[4/3] w-full rounded-xl object-cover object-[35%_center]"
               />
             </div>
           </div>
@@ -245,21 +245,21 @@ export default function Home() {
             </h2>
             <div className="space-y-4">
               <p>
-                I am a professional storyteller. In the last 8 years I have performed in over 100 live
+                I am a professional storyteller. In the last 8 years I have performed in over 50 live
                 shows around the world, and learnt what brings the listeners into the story.
-              </p>
-              <p>
-                I co-run Hong Kong Stories, a non-profit organisation that hosts free workshops and
-                curates live shows.
               </p>
               <p>
                 My focus as facilitator is to help people recognise the wealth of stories we all have and
                 how powerful a well told story is.
               </p>
               <p>
-                I have hosted over fifty workshops where we shaped thousands of stories. Some of them
-                became a hit on the stage, some of them energized conversations in office pantries and
-                family living rooms, many of them made someone feel seen.
+                I also co-run Hong Kong Stories, a non-profit organisation that hosts free workshops and
+                curates live shows.
+              </p>
+              <p>
+                I have hosted over seventy workshops where we shaped stories. Some of them became a hit
+                on the stage, some of them energized conversations in office pantries and family living
+                rooms, many of them made someone feel seen.
               </p>
               <p className="text-muted">
                 Before this, I spent a decade in finance and tech at Goldman Sachs and Airdev.
