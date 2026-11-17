@@ -42,15 +42,6 @@ export const events: EventItem[] = [
     past: true,
   },
   {
-    date: "8 Aug",
-    title: "Storytelling Workshop with Sanyuja Wellness",
-    meta: "Workshop · Pune",
-    href: "https://docs.google.com/forms/d/e/1FAIpQLScR1u2D7Yb5ik6pvQ2KNncQ4ipGABYR9pc1W_1drNZ-m5clBQ/viewform",
-    img: "/images/event-pune.jpg",
-    alt: "Participants laughing around a workshop table",
-    past: true,
-  },
-  {
     date: "Sun 5 Jul 2026",
     title: "Storytelling Workshop: Love Letters",
     meta: "Writing workshop · Online",
@@ -84,6 +75,15 @@ export const events: EventItem[] = [
     href: "https://www.eventbrite.hk/e/end-of-year-tea-hike-tickets-1967620105703",
     img: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F1170668353%2F2778646269671%2F1%2Foriginal.20251111-083043?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=c5c817d3a9994856c4517ab43bc9d961",
     alt: "End-of-year Reflections Hike event banner",
+    past: true,
+  },
+  {
+    date: "Fri 8 Aug 2025",
+    title: "Storytelling Workshop with Sanyuja Wellness",
+    meta: "Workshop · Pune",
+    href: "https://docs.google.com/forms/d/e/1FAIpQLScR1u2D7Yb5ik6pvQ2KNncQ4ipGABYR9pc1W_1drNZ-m5clBQ/viewform",
+    img: "/images/event-pune.jpg",
+    alt: "Participants laughing around a workshop table",
     past: true,
   },
 ];
