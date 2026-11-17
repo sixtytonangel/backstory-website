@@ -249,8 +249,8 @@ export default function Home() {
                 shows around the world, and learnt what brings the listeners into the story.
               </p>
               <p>
-                My focus as facilitator is to help people recognise the wealth of stories we all have and
-                how powerful a well told story is.
+                My focus as a facilitator is to help people recognise the wealth of stories we all have
+                and develop strong storytelling instincts.
               </p>
               <p>
                 I also co-run Hong Kong Stories, a non-profit organisation that hosts free workshops and
