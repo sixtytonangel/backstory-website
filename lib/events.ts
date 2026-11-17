@@ -30,7 +30,7 @@ export const events: EventItem[] = [
     img: "/images/event-offbeat.jpg",
     alt: "Offbeat Sparks Hong Kong poster with the speakers",
     imgPosition: "object-bottom",
-    past: false,
+    past: true,
   },
   {
     date: "Sat 10 Oct 2026",
